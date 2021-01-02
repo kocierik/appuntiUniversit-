@@ -4,4 +4,4 @@
   - Imparato a configurare il debugger
   - Basi di golang
  #### 02/01/2021:  
-  - 
+  - Direttive if, #elif, #else e #endif (C/C++)

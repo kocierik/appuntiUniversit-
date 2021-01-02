@@ -5,3 +5,4 @@
   - Basi di golang
  #### 02/01/2021:  
   - Direttive if, #elif, #else e #endif (C/C++)
+  - Tipi di liste in python

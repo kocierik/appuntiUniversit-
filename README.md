@@ -6,3 +6,6 @@
  #### 02/01/2021:  
   - Direttive if, #elif, #else e #endif (C/C++)
   - Tipi di liste in python
+ #### 03/01/2021:  
+  - trovare dispositivo samsung
+  - avviare selenium su macos

@@ -9,3 +9,5 @@
  #### 03/01/2021:  
   - trovare dispositivo samsung
   - avviare selenium su macos
+ #### 04/01/2021:  
+  - invio email automatizzato (selenium)

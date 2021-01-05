@@ -11,3 +11,6 @@
   - avviare selenium su macos
  #### 04/01/2021:  
   - invio email automatizzato (selenium)
+ #### 05/01/2021:  
+  - Programmare in hack assembly
+  - Creare un caricamento in python

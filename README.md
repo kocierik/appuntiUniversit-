@@ -14,3 +14,6 @@
  #### 05/01/2021:  
   - Programmare in hack assembly
   - Creare un caricamento in python
+ #### 06/01/2021:  
+  - Visitors gitHub
+  - Creazione menu in python

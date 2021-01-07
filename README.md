@@ -17,3 +17,5 @@
  #### 06/01/2021:  
   - Visitors gitHub
   - Creazione menu in python
+#### 06/01/2021:  
+  - Basi di web Scraping in python

@@ -19,3 +19,5 @@
   - Creazione menu in python
 #### 07/01/2021:  
   - Basi di web Scraping in python
+#### 08/01/2021:  
+  - Basi di pygame

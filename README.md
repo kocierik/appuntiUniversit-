@@ -21,3 +21,5 @@
   - Basi di web Scraping in python
 #### 08/01/2021:  
   - Basi di pygame
+#### 09/01/2021:  
+  - Corso react H2

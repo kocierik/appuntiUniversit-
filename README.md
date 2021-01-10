@@ -23,3 +23,5 @@
   - Basi di pygame
 #### 09/01/2021:  
   - Corso react H2
+#### 10/01/2021:  
+  - Corso react (props)

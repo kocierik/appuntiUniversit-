@@ -25,3 +25,5 @@
   - Corso react H2
 #### 10/01/2021:  
   - Corso react (props)
+#### 11/01/2021:  
+  - Esercitazioni corso react (props)

@@ -28,4 +28,4 @@
 #### 11/01/2021:  
   - Esercitazioni corso react (props)
 #### 13/01/2021:  
-  - Esercitazioni corso react (useState)
+  - corso react (useState)

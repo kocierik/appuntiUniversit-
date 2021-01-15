@@ -29,3 +29,5 @@
   - Esercitazioni corso react (props)
 #### 13/01/2021:  
   - corso react (useState)
+#### 16/01/2021:  
+  - configurazione debugger in C++

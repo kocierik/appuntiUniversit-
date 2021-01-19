@@ -31,3 +31,5 @@
   - corso react (useState)
 #### 16/01/2021:  
   - configurazione debugger in C++
+#### 16/01/2021:  
+  - corso python frontendmaster

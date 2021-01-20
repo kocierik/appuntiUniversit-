@@ -32,4 +32,6 @@
 #### 16/01/2021:  
   - configurazione debugger in C++
 #### 19/01/2021:  
-  - corso python frontendmaster
+  - corso python basi
+#### 20/01/2021:  
+  - corso python classi

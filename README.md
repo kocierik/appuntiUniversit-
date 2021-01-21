@@ -35,3 +35,5 @@
   - corso python basi
 #### 20/01/2021:  
   - corso python classi
+#### 21/01/2021:  
+  - corso python (inizio django)

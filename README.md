@@ -37,3 +37,5 @@
   - corso python classi
 #### 21/01/2021:  
   - corso python (inizio django)
+#### 22/01/2021:  
+  - corso python finito

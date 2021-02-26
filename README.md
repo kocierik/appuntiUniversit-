@@ -39,3 +39,5 @@
   - corso python (inizio django)
 #### 22/01/2021:  
   - corso python finito
+#### 25/02/2021:  
+  - utilizzare LaTeX 

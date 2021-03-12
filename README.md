@@ -41,3 +41,5 @@
   - corso python finito
 #### 25/02/2021:  
   - utilizzare LaTeX 
+#### 13/03/2021:  
+  - basi react (book)

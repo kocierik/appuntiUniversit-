@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts, amssymb, amsmath}
+\begin{document}
+\title{React}
+\author{Koci Erik}
+\maketitle
+\section{Props}
+Le \textbf{props} sono utilizzate per passare parametri ad una funzione; le props stesse sono oggetti e non cambiano nel tempo, esse sono \textbf{statiche}. L'assegnamento delle props è chiamato \textbf{destrutturizzazione}. \\\\
+\texttt{<NomeComponente nome="Erik"/>}\\
+Nel caso in cui volessimo attribuire dei valori di \textbf{default}, utilizziamo questa sintassi: \\
+\texttt{NomeComponente.defaultProps = \{ nome: "Non disponibile" \}}
+\subsection{React.Fragment}
+Il tag \textbf{ \textless React.Fragment\textgreater } è specifico di React e permetti di ovviare al problema di inserimento del tag div all'interno di altri blocchi. Nel casoin cui volessimo per esempio inserire una riga all'interno di una tabella creando un nuovo componente, il compilatore ci darà errore.\\
+\subsection{PropTypes}
+Per aggiungere i controlli sulle proprietà d'ingresso, si sfrutta propTypes valorizzandola con un oggetto. E' necessario importarlo nel file.\\\\
+\texttt{NomeComponente.propTypes = \{ nome: PropTypes.string  \}}\\
+\texttt{NomeComponente.propTypes = \{ nome: PropTypes.number  \}}
+\subsection{Metodo map}
+La funzione Javascript \texttt{map()} ci permette di ottenere un nuovo array  da scorrere, costruito sulla base dell'array originario.\\\\
+\texttt{hooby.map(item => \{\\ \indent lavoro sul singolo elemento \\\});}
+\\\\
+Per non sporcare il codice html, possiamo incapsulare il metodo \texttt{map} all'interno di un oggetto.\\\\
+\texttt{const itemJSX = ( \\ \indent hooby.map(item => \{item\})\\\indent);} \\\\
+A questo punto possiamo inserire nel codice Html il solo ogggetto:\\\\ 
+\texttt{ return ( \{ itemJSX \} );}
+\subsubsection{SetInterval}
+Funzione javascript che ci permette di creare un timer:\\\\
+\texttt{setInterval( () => \{ i++;\},1000);}\\\\
+Il metodo \textbf{render()} viene evocato solo una volta! Quindi nel caso noi volessimo modificare un paragrafo non lo possiamo fare. Per bypassare questo problema utilizzeremo lo \textbf{state}.
+\section{Stato di un componente}
+La caratteristica dell'oggetto \textbf{state} è che non appena viene modificato, la modifica viene trasmessa immediatamente sul DOM. Esso confronta i due DOM aggiornando con le nuove modifiche.\\ E' necessario importarlo nel file \textbf{\{useState\}}.
+Per inizializzare una variabile di stato dovrò utilizzare la funzione \textbf{useState}.\\\\
+
+\texttt{ function Stock(props)\{\\
+ \indent \indent 
+ const [prezzo, setPrezzo] = useState(120);\\
+ \indent \indent 
+ const [ora, setOra] = useState('16:00');\\
+ \indent \}
+ }
+\section{Gestire gli eventi}
+L'interazione tra utente e interfaccia è dettata soprattutto dalla proprietà onClick. Qui presente una lista dei \textbf{principali eventi} collegati al mouse:\\\\
+\texttt{onClick:} \textbf{Click} sull'elemento \\
+\texttt{onMouseEnter:} \textbf{Mouse} spostato sopra un elemento \\
+\texttt{onKeyDown:} \textbf{Pressione} di un tasto su tastiera \\
+\texttt{onChange:} \textbf{Cambio dell'opzione} selezionata dall'utente \\
+\texttt{onSubmit:} Quando il form viene \textbf{inviato} \\
+
+
+
+\section{Accorgimenti}
+In presenza di un \textbf{if} nel quale abbiamo solo la condizione then, per stampare ad esempio un paragrafo avendo delle condizioni, possiamo utilizzare questa sintassi:\\\\
+\texttt{\{ eta>=18 and and <h3>Sono maggiorenne</h3> \} }\\\\
+La notazione degli \textbf{Hook} equivale alle funzioni.\\\\
+Per \textbf{bloccare} un comportamento predefinito di un tag \texttt{html}, si deve richiamare \texttt{e.preventDefault}.
+\end{document}

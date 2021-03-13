@@ -48,7 +48,7 @@ $$2 (y\textsubscript{1}+y\textsubscript{2})-3(x\textsubscript{1}+x\textsubscript
 Questa proprietà è verificata perchè sappiamo per definizione che $W\textsubscript{1} \in W$ e $W\textsubscript{2} \in W$.
 \\\\
 Considero 2 generici vettori e verifico che il prodotto da come risultato un valore che appartiene a sua volta a $W$:
-$$\lambda w\textsubscript{1}}=\lambda (x\textsubscript{1},y\textsubscript{1})=(\lambda x\textsubscript{1},\lambda  y\textsubscript{1})$$
+$$\lambda w\textsubscript{1}=\lambda (x\textsubscript{1},y\textsubscript{1})=(\lambda x\textsubscript{1},\lambda  y\textsubscript{1})$$
 $$2\lambda y\textsubscript{1}-3 \lambda k\textsubscript{1} = \lambda(2y\textsubscript{1}-3x\textsubscript{1})=0$$ \\
 Anche questa proprietà è stata verificata perchè sappiamo per definizione che $W\textsubscript{1} \in W$.\\\\
 Ricordarsi sempre di verificare se esiste il vettore \textbf{nullo!}
@@ -82,5 +82,32 @@ $$\begin{cases}
 Due vettori sono \textbf{linearmente dipendenti} quando \textbf{stanno sulla stessa retta} ovvero quando $V\textsubscript{1} = \lambda V \textsubscript{2}$. \\\\ Nel caso in cui una soluzione del sistema dia come risultato $0=0$ significa che il sistema ha infinite soluzioni. Di conseguenza possiamo prendere un \textbf{qualunque} valore. Se i vettori stanno sullo stesso piano allora sono \textbf{linearmente indipendenti}. 
 
 
+\section{Insiemi di generatori e basi}
+Dati $n$ vettori $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$ di uno spazio vettoriale $V$ su un campo $\kappa$ si definisce \textbf{span lineare} l'insieme:
+$$Span(V\textsubscript{1},V\textsubscript{2},V\textsubscript{n})=\{\lambda\textsubscript{1}V\textsubscript{1}+\lambda\textsubscript{2}V\textsubscript{2}+\lambda\textsubscript{n}V\textsubscript{n} | \lambda\textsubscript{i} \in \kappa\}$$
+Di tutti i vettori che si possono scrivere come combinazione lineare di $V\textsubscript{1},V\textsubscript{2}, V\textsubscript{n}$. Lo span è l'insieme di tutte le combinazioni lineari che possiamo fare da V\textsubscript{1} a \textsubscript{n}. Esso può essere indicato con due principali sintassi: 
+$$ L(V\textsubscript{1}.,V\textsubscript{2},V\textsubscript{n}) \hspace{1cm}
+<V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}>$$
+\textbf{Esempio}: Se $V\textsubscript{1}\neq 0$ è un vettore di $R\textsuperscript{2}$ allora $L(V\textsubscript{1})$ contiene tutti i vettori del tipo $\lambda\textsubscript{1}V\textsubscript{1}$. Si tratta quindi della retta passante per l'origine di direzione $V\textsubscript{1}$. Essa comprende tutti i suoi multipli. \\\\
+Si dice che i vettori $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$ sono un \textbf{sistema di generatori} di $V$ se ogni vettore di $V$ si può ottenere come combinazione lineare di $V\textsubscript{1}V\textsubscript{2},V\textsubscript{n}$, ovvero se $V=L(V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$\\
+Si dice che i vettori $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$ sono una \textbf{base} di $V$ se:
+\begin{itemize}
+    \item sono linearmente indipendenti
+    \item sono un sistema di generatori
+\end{itemize}
+Si dimostra che, se $V$ ha una base costituita da $n$ vettori, ogni altra base di $V$ è costituita da $n$ vettori. Si dice allora che $V$ ha \textbf{dimensione} $n$ e si scrive $dimV=n$.\\
+La scomposizione di un vettore $V$ come combinazione lineare dei vettori di una base è unica, ovvero se $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$ sono una base dello spazio vettoriale "v
+ allora per ogni $v \in V$ esistono unici $\lambda\textsubscript{1},\lambda\textsubscript{2},\lambda\textsubscript{n}$ tali che: 
+ $$V=\lambda\textsubscript{1}V\textsubscript{1}+\lambda\textsubscript{2}V\textsubscript{2}+\lambda\textsubscript{n}V\textsubscript{n}$$
+ I coefficienti di $\lambda\textsubscript{1},\lambda\textsubscript{2},\lambda\textsubscript{n}$ si dicono \textbf{componenti} di $V$ rispoetto alla base $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$.\\
+ \textbf{Esempio:} \\
+ in $R\textsuperscript{2}$ una possibile base è $V\textsubscript{1}=(1,0)$ e $V\textsubscript{2}=(0,1)$. infatti:
+\begin{itemize}
+    \item sono linearmente indipendenti (non sono paralleli)
+    \item sono generatorim infatti per ogni generico $V=(a,b)$ di $R\textsuperscript{2}$ vale la relazione $V=a(1,0)+b(0,1)$
+\end{itemize}
+ 
+
+ 
 \end{document}
 

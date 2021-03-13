@@ -1,0 +1,132 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts, amssymb, amsmath}
+\parindent 0px
+
+\begin{document}
+\title{Algoritmi e strutture dati}
+\author{Koci Erik}
+\maketitle
+\section{Complessità algoritmi}
+\begin{enumerate}
+    \item \textbf{Costo:} si riferisce al costo di un singolo algoritmo
+\item \textbf{Complessità:} si riferisce a più risoluzioni di un algoritmo 
+\end{enumerate}
+
+il costo di un blocco \textbf{if-then-else} è  $O(max\{f(n),g(n),h(n)\})$ cioè \textbf{O(1)}.
+
+\subsection{Ordini di grandezza}
+\begin{enumerate}
+    \item $\Theta(f(n))$ se \textbf{cresce tanto quanto f}
+    \item $O(f(n))$ \textbf{se la crescita è minore o uguale a f}
+    \item $\Omega(f(n))$ \textbf{se la crescita è maggiore o uguale a f}
+\end{enumerate}
+\subsection{Esercizi}
+\begin{itemize}
+    \item $1325 n^2 + 12 n + 1 = \theta(n^3)$ FALSO
+    \item $76 n^3 = =(n^3)$ VERO
+    \item $n^2 log n = O(n^2)$ FALSO
+    \item $3^N = O(2^N)$ FALSO
+    \item $1^n = O(2^\frac{n}{2})$ FALSO
+    \item $2^N+100 = O(2^N)$ VERO
+    \item $n = O(n log n)$ VERO
+    \item $n^2 = (n log n$ FALSO
+    \item $log(n^2) = \Theta(log n)$ VERO
+    \item $(n+1)/2 = \Theta(n)$ VERO
+    \item $\frac{(n+1)*n}{2} = \Theta(n^2)$ VERO
+\end{itemize}
+\subsection{Analisi casi}
+\begin{enumerate}
+    \item \textbf{Caso pessimo} $$T\textsc{worst}(n) = max T(I)$$
+    \item \textbf{Caso ottimo} $$T\textsc{best}(n) = min T(I)$$
+    \item \textbf{Caso medio} $$T\textsc{avg}(n) = \sum\limits_{} T(I)P(I)$$
+\end{enumerate}
+\subsection{Algoritmi ordinamento}
+\textbf{Selection sort:} scorre tutti gli elementi degli array e si cerca il valore più piccolo scambiando i due valori. Il costo è lineare con il numero di elementi da considerare:
+$$T(n) = \Theta (n^2)$$
+\textbf{il costo è $\Theta(n^2)$} perchè è presente una funzione min che ogni volta controlla se il numero è il minore.
+Le chiamate a \textbf{min} contribuiscono a $n^2$ mentre il resto combacia con $n$
+cioè $n^2+n$;\,\,\,\,n viene assorbito. \\
+
+\textbf{Ricerca binaria (ricorsiva):} per utilizzare questo algoritmo devo avere un array ordinato. Cerco il valore andando a verificare sempre nella metà dove mi aspetto che sia presente.
+$$T(n) = 1 \,\,\,se\,\, n=0$$
+$$T(n) = T(n/2)+1 $$ 
+\textbf{equazione di ricorrenza:} ci aiuta a calcolare il costo analizzando una singola ricorsione. \\\\
+\subsection{metodo dell'iterazione:} consiste nello sviluppare l'equazione di ricorrenza, per intuirne la soluzione. 
+
+$$T(n) = c_1 + c_2*log (n) = \Theta(log (n))$$
+E' presente il \textbf{logaritmo} perchè ogni volta devo \textbf{dimezzare} il tutto in base al numero di elementi. $c_1$ perchè devo eseguire le istruzioni la prima volta.\\
+
+dimostrare che $T(n) = O(n)$
+$$T(n = 1) \,\, n==1$$
+$$T(T([n/2])+n \,\,\, n>1$$
+\subsection{Metodo della sostituzione:} consiste facendo una dimostrazione per induzione. quindi parto dal valore base che è n (esempio 1) e dimostriamo che vale anche per un $n$ più grande. \\\\
+\textbf{caso base:} $$T(1) = 1 \leq c x 1$$ \\
+\textbf{induzione:}
+$$T(n) = T([n/2])+n$$ $$ \leq c[n/2]+n \,\,\,\,\, (ipotesi\,induttiva)$$
+$$\leq cn/2+n=\frac{cn+2n}{2} = (c/2+1)n \leq cn$$ \\
+
+\subsection{Master Theorem:} Si consideri la seguente equazione di ricorrenza: \\
+$$T(n) = d \,\,\,se\,\, n=1$$
+$$T(n) = aT(n/b)+cn^\beta \,\,\,se\,\, n>1$$
+e sia: $$\alpha = \frac{log (a)}{log(b)}$$
+
+\textbf{a} numero di chiamate ricorsive\\
+\textbf{b} mi dice come partiziono il mio input\\
+questi due valori mi danno $\alpha$. \\
+$\beta$ mi dice l'esponente che avevo. \\
+
+L'equazione di ricorrenza ha la seguente soluzione:
+\begin{enumerate}
+    \item $T(n) = \Theta(n^\alpha)$ se $\alpha > \beta$
+    \item $T(n) = \Theta(n^\alpha*log(n))$ se $\alpha = \beta$
+    \item $T(n) = \Theta(n^\beta)$ se $\alpha < \beta$
+\end{enumerate}
+
+
+Il teorema fondamentale  \textbf{non} si può applicare ad algoritmi ricorsivi che non effettuano \textbf{partizioni bilanciate}.\\
+ad esempio non può essere applicato nella risoluzione di fibonacci ricorsivo.\\
+
+Esempio: \\
+$$T(n) = 1 \, n<=1$$
+$$T(n−1)+T(n − 2)+1 \, n > 2$$
+Se le \textbf{partizioni sono bilanciate} conviene utilizzare il   \textbf{Master Theorem}.\\\\
+\textbf{partizione bilanciate:} quando facciamo chiamate ricorsive prendo il mio input suddividendolo in parti n/b. Fibonacci non è bilancianto perche abbiamo due chiamate ricorsive diverse. \\
+
+\textbf{L’analisi ammortizzata:} studia il costo medio di una sequenza di operazioni.\\
+
+Sia  \textbf{T(n, k)} il tempo totale richiesto da un algoritmo, nel caso pessimo, per effettuare k operazioni su istanze di lunghezza n.
+Definiamo il \textbf{costo ammortizzato} su una sequenza di k operazioni come:
+$$T_\alpha(n)=\frac{T(n,k)}{k}$$
+
+\section{Scelta degli algoritmi}
+A seconda delle operazioni da eseguire è necessario adattare diverse tecniche di implimentazione di un algoritmo.
+\subsubsection{Implementazione su un vettore ordinato} 
+Questo tipo di ricerca ha un costo computazionale basso nel caso in cui volessimo \textbf{ricercare degli elementi}.
+Costi computazionali:
+\begin{itemize}
+    \item Ricerca $O(log\hspace{0.1cm}n)$
+    \item Inserimento $O(n)$
+    \item Eliminazione $O(n)$
+\end{itemize}
+\subsubsection{Implementazione su liste concatenate non ordinate}
+Questo implementazione converrebbe utilizzarla nel caso in cui volessimo \textbf{aggiungere o eliminare degli elementi}.
+Costi computazionali:
+\begin{itemize}
+    \item Ricerca $O(n)$
+    \item Inserimento $O(1)$
+    \item Eliminazione $O(n)$
+\end{itemize}
+\subsection{Algoritmi di visita degli alberi}
+Esistono due tipologie di visita:
+\begin{itemize}
+    \item In profondità (pre-ordine, in-rodine, post-ordine)
+    \item In ampiezza
+\end{itemize}
+Nella visita \textbf{pre-ordine} si parte visitando il nodo della radice per poi passare a visitare tutto il nodo sinistro, risalendo poi andando verso destra.\\\\
+Nella visita \textbf{in-ordine} si parte a visitare dal ramo più in basso a sinistra risalendo per poi andare verso destra. \\\\
+Nella visita \textbf{post-ordine} vengono prima visitati i nodi più in profondità partendo sempre da sinistra verso destra per poi risalire.\\\\
+Nella visita per \textbf{ampiezza} si analizza l'albero a livelli, partendo dalla radice.
+
+
+
+\end{document}

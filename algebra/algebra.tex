@@ -22,7 +22,7 @@ $$(x\textsubscript{1},x\textsubscript{2},x\textsubscript{n})+(y\textsubscript{1}
 (x\textsubscript{1}+y\textsubscript{1},x\textsubscript{2}+y\textsubscript{2},x\textsubscript{n}+y\textsubscript{n})$$
 $$\lambda(x\textsubscript{1}+x\textsubscript{2}+x\textsubscript{n})=
 (\lambda k\textsubscript{1}+\lambda k\textsubscript{2}+\lambda k\textsubscript{n})\hspace{1cm} \lambda \in R$$
-E' uno \textbf{spazioe vettoriale su $R$}\\\\
+E' uno \textbf{spazio vettoriale su $R$}\\\\
 In particolare
 \begin{itemize}
     \item Il vettore nullo di cui si parla è $0=(0,0,..,0)$
@@ -56,7 +56,7 @@ Ricordarsi sempre di verificare se esiste il vettore \textbf{nullo!}
 \section{Vettori linearmente dipendenti-indipendenti}
 Sia $V$ uno spazio vettoriale su un campo $\kappa$ e siano $\lambda \textsubscript{1},\lambda \textsubscript{2},\lambda \textsubscript{n}$ una qualunque somma del tipo: $$\lambda\textsubscript{1}V\textsubscript{1}+\lambda\textsubscript{2}V\textsubscript{2}+\lambda\textsubscript{n}V\textsubscript{n}$$
 \\
-Si dice che i vettori $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$ sono \textbf{linearamente dipendenti} se esiste una loro combinazione lineare, a coefficienti non tutti nulli, che dà come risultato il vettore nullo. \\
+Si dice che i vettori $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$ sono \textbf{linearmente dipendenti} se esiste una loro combinazione lineare, a coefficienti non tutti nulli, che dà come risultato il vettore nullo. \\
 Si dice che i vettori $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$ sono \textbf{linearmente indipendenti} se l'unica loro combinazione lineare che dà come risultato il vettore nullo è quella con tutti i coefficienti nulli, ovvero se: 
 $$\lambda\textsubscript{1}V\textsubscript{1}+\lambda\textsubscript{2} V\textsubscript{2}+\lambda\textsubscript{n} V\textsubscript{n}=0 \implies \lambda\textsubscript{1}=\lambda\textsubscript{2}=\lambda\textsubscript{n}=0$$ 
 \textbf{Esempio}
@@ -85,12 +85,10 @@ Due vettori sono \textbf{linearmente dipendenti} quando \textbf{stanno sulla ste
 \section{Insiemi di generatori e basi}
 Dati $n$ vettori $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$ di uno spazio vettoriale $V$ su un campo $\kappa$ si definisce \textbf{span lineare} l'insieme:
 $$Span(V\textsubscript{1},V\textsubscript{2},V\textsubscript{n})=\{\lambda\textsubscript{1}V\textsubscript{1}+\lambda\textsubscript{2}V\textsubscript{2}+\lambda\textsubscript{n}V\textsubscript{n} | \lambda\textsubscript{i} \in \kappa\}$$
-Di tutti i vettori che si possono scrivere come combinazione lineare di $V\textsubscript{1},V\textsubscript{2}, V\textsubscript{n}$. Lo span è l'insieme di tutte le combinazioni lineari che possiamo fare da V\textsubscript{1} a \textsubscript{n}. Esso può essere indicato con due principali sintassi: 
+Di tutti i vettori che si possono scrivere come combinazione lineare di $V\textsubscript{1},V\textsubscript{2}, V\textsubscript{n}$. Lo span è l'insieme di tutte le combinazioni lineari che possiamo fare da V\textsubscript{1} a V\textsubscript{n}. Esso può essere indicato con due principali sintassi: 
 $$ L(V\textsubscript{1}.,V\textsubscript{2},V\textsubscript{n}) \hspace{1cm}
 <V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}>$$
-\textbf{Esempio}: Se $V\textsubscript{1}\neq 0$ è un vettore di $R\textsuperscript{2}$ allora $L(V\textsubscript{1})$ contiene tutti i vettori del tipo $\lambda\textsubscript{1}V\textsubscript{1}$. Si tratta quindi della retta passante per l'origine di direzione $V\textsubscript{1}$. Essa comprende tutti i suoi multipli. \\\\
-Si dice che i vettori $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$ sono un \textbf{sistema di generatori} di $V$ se ogni vettore di $V$ si può ottenere come combinazione lineare di $V\textsubscript{1}V\textsubscript{2},V\textsubscript{n}$, ovvero se $V=L(V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$\\
-Si dice che i vettori $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$ sono una \textbf{base} di $V$ se:
+\textbf{Esempio}: Se $V\textsubscript{1}\neq 0$ è un vettore di $R\textsuperscript{2}$ allora $L(V\textsubscript{1})$ contiene tutti i vettori del tipo $\lambda\textsubscript{1}V\textsubscript{1}$. Si tratta quindi della retta passante per l'origine di direzione $V\textsubscript{1}$. Essa comprende tutti i suoi multipli. 
 \begin{itemize}
     \item sono linearmente indipendenti
     \item sono un sistema di generatori
@@ -99,15 +97,18 @@ Si dimostra che, se $V$ ha una base costituita da $n$ vettori, ogni altra base d
 La scomposizione di un vettore $V$ come combinazione lineare dei vettori di una base è unica, ovvero se $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$ sono una base dello spazio vettoriale "v
  allora per ogni $v \in V$ esistono unici $\lambda\textsubscript{1},\lambda\textsubscript{2},\lambda\textsubscript{n}$ tali che: 
  $$V=\lambda\textsubscript{1}V\textsubscript{1}+\lambda\textsubscript{2}V\textsubscript{2}+\lambda\textsubscript{n}V\textsubscript{n}$$
- I coefficienti di $\lambda\textsubscript{1},\lambda\textsubscript{2},\lambda\textsubscript{n}$ si dicono \textbf{componenti} di $V$ rispoetto alla base $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$.\\
- \textbf{Esempio:} \\
- in $R\textsuperscript{2}$ una possibile base è $V\textsubscript{1}=(1,0)$ e $V\textsubscript{2}=(0,1)$. infatti:
+ I coefficienti di $\lambda\textsubscript{1},\lambda\textsubscript{2},\lambda\textsubscript{n}$ si dicono \textbf{componenti} di $V$ rispetto alla base $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$.\\\\
+ \textbf{Esempio:} \\\\
+ In $R\textsuperscript{2}$ una possibile base è $V\textsubscript{1}=(1,0)$ e $V\textsubscript{2}=(0,1)$. infatti:
 \begin{itemize}
     \item sono linearmente indipendenti (non sono paralleli)
-    \item sono generatorim infatti per ogni generico $V=(a,b)$ di $R\textsuperscript{2}$ vale la relazione $V=a(1,0)+b(0,1)$
+    \item sono generatori infatti per ogni generico $V=(a,b)$ di $R\textsuperscript{2}$ vale la relazione $V=a(1,0)+b(0,1)$
 \end{itemize}
- 
+ \section{Risoluzioni esercizi}
+Per verificare se due vettori sono linearmente dipendenti o indipendenti devo:
+\begin{itemize}
+    \item risolvere $\lambda\textsubscript{1}V\textsubscript{1}+\lambda\textsubscript{2}V\textsubscript{2}=0$, e quindi convincermi che l'unica soluzione è $\lambda\textsubscript{1}=\lambda\textsubscript{2}=0$. Oppure controllare se i \textbf{vettori sono multipli}, se sono multipli tra loro, allora i vettori sono dipendenti.
+\end{itemize}
 
- 
 \end{document}
 

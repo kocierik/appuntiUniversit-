@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts, amssymb, amsmath}
+\parindent 0px
+
+\begin{document}
+
+\title{Algebra e geometria}
+\author{Koci Erik}
+\maketitle
+
+\section{Spazi vettoriali}
+
+Uno \textbf{spazio vettoriale} su un campo $\kappa$ è un insieme $V$ in cui sono definite: \\
+\begin{enumerate}
+    \item Un'operazione interna tra elementi di $V$, detta \textbf{somma}
+    \item Un'operazione di \textbf{prodotto} che associa ad ogni coppia formata da un elemento di $V$ (vettore) e da un elemento di $\kappa$ (scalare) un (unico) elemento di $V$. 
+    \item Devono rispettare le proprietà dei numeri $reali$
+\end{enumerate}
+
+L'insieme $R\textsuperscript{$n$} = \{(x\textsubscript{1},x\textsubscript{2},x\textsubscript{n}):x\textsubscript{i}\in R\}$ di tutte le n-uple ordinate di numeri reali con le due operazioni di \textbf{somma} e \textbf{moltiplicazione per uno scalare} così definite:
+$$(x\textsubscript{1},x\textsubscript{2},x\textsubscript{n})+(y\textsubscript{1},y\textsubscript{2},y\textsubscript{n})=
+(x\textsubscript{1}+y\textsubscript{1},x\textsubscript{2}+y\textsubscript{2},x\textsubscript{n}+y\textsubscript{n})$$
+$$\lambda(x\textsubscript{1}+x\textsubscript{2}+x\textsubscript{n})=
+(\lambda k\textsubscript{1}+\lambda k\textsubscript{2}+\lambda k\textsubscript{n})\hspace{1cm} \lambda \in R$$
+E' uno \textbf{spazioe vettoriale su $R$}\\\\
+In particolare
+\begin{itemize}
+    \item Il vettore nullo di cui si parla è $0=(0,0,..,0)$
+    \item L'opposto di $v=(x\textsubscript{1},x\textsubscript{2},x\textsubscript{n})$ è $-v=(-x\textsubscript{1},-x\textsubscript{2},-x\textsubscript{n})$
+    \item L'insieme dei vettori nel piano e dei vettori nello spazio possono essere identificati, rispettivamente, con $R\textsubscript{2}$ e $R\textsubscript{3}$
+\end{itemize}
+\section{Sottospazi vettoriali}
+ Sia $V$ uno spazio vettoriale su un campo $\kappa$. Un sottoinsieme $W\subsetneq V$ è un \textbf{sottospazio vettoriale} di $V$ se valgono le seguenti proprietà:
+\begin{enumerate}
+    \item Sommate due coppie di elementi il risultato deve ancora \textbf{appartenere} all'insieme definito.
+    $$W\textsubscript{1}+W\textsubscript{2}\in W$$
+    \item Moltiplicati due valori per una costante, il risultato deve ancora \textbf{appartenere} all'insieme.
+    $$\lambda w \in W$$
+    \item $W$ \textbf{deve contenere lo 0} e l'opposto di ogni suo elemento.
+\end{enumerate}
+\textbf{Esempio:} \\\\
+Stabilire se è un sottospazio vettoriale di $V=R\textsuperscript{2}$
+$$W = \{(x,y)\in R\textsuperscript{2}: 2y-3x=0\}$$
+Considero 2 generici vettori e verifico che la loro somma appartiene a sua volta a $W$:
+$$W\textsubscript{1}+W\textsubscript{2}=(x\textsubscript{1},y\textsubscript{1})+(x\textsubscript{2},y\textsubscript{2})=(x\textsubscript{1}+x\textsubscript{2},y\textsubscript{1}+y\textsubscript{2})$$
+Considero 2 generici vettori e verifico che appartengono a sua volta a $W$:
+$$2 (y\textsubscript{1}+y\textsubscript{2})-3(x\textsubscript{1}+x\textsubscript{2})=2y\textsubscript{1}-3x\textsubscript{1}+2y\textsubscript{2}-3x\textsubscript{2}=0$$
+Questa proprietà è verificata perchè sappiamo per definizione che $W\textsubscript{1} \in W$ e $W\textsubscript{2} \in W$.
+\\\\
+Considero 2 generici vettori e verifico che il prodotto da come risultato un valore che appartiene a sua volta a $W$:
+$$\lambda w\textsubscript{1}}=\lambda (x\textsubscript{1},y\textsubscript{1})=(\lambda x\textsubscript{1},\lambda  y\textsubscript{1})$$
+$$2\lambda y\textsubscript{1}-3 \lambda k\textsubscript{1} = \lambda(2y\textsubscript{1}-3x\textsubscript{1})=0$$ \\
+Anche questa proprietà è stata verificata perchè sappiamo per definizione che $W\textsubscript{1} \in W$.\\\\
+Ricordarsi sempre di verificare se esiste il vettore \textbf{nullo!}
+
+\section{Vettori linearmente dipendenti-indipendenti}
+Sia $V$ uno spazio vettoriale su un campo $\kappa$ e siano $\lambda \textsubscript{1},\lambda \textsubscript{2},\lambda \textsubscript{n}$ una qualunque somma del tipo: $$\lambda\textsubscript{1}V\textsubscript{1}+\lambda\textsubscript{2}V\textsubscript{2}+\lambda\textsubscript{n}V\textsubscript{n}$$
+\\
+Si dice che i vettori $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$ sono \textbf{linearamente dipendenti} se esiste una loro combinazione lineare, a coefficienti non tutti nulli, che dà come risultato il vettore nullo. \\
+Si dice che i vettori $V\textsubscript{1},V\textsubscript{2},V\textsubscript{n}$ sono \textbf{linearmente indipendenti} se l'unica loro combinazione lineare che dà come risultato il vettore nullo è quella con tutti i coefficienti nulli, ovvero se: 
+$$\lambda\textsubscript{1}V\textsubscript{1}+\lambda\textsubscript{2} V\textsubscript{2}+\lambda\textsubscript{n} V\textsubscript{n}=0 \implies \lambda\textsubscript{1}=\lambda\textsubscript{2}=\lambda\textsubscript{n}=0$$ 
+\textbf{Esempio}
+Verificare se i seguenti vettori $\in R\textsuperscript{2}$ sono linerarmente dipendenti o indipendenti:
+$$V\textsubscript{1}=(1,2) \hspace{1cm} V\textsubscript{2}=(4,1)$$
+Per scoprirlo devo \textbf{risolvere:} $$\lambda \textsubscript{1}V\textsubscript{1}+\lambda \textsubscript{2}V\textsubscript{2}=0$$
+$$\lambda\textsubscript{1}(1,2)+\lambda\textsubscript{2}(4,1)=(0,0) \implies (\lambda\textsubscript{1},2\lambda\textsubscript{1})+(4\lambda\textsubscript{1},\lambda\textsubscript{1})=(0,0)$$
+$$(\lambda\textsubscript{1}+4\lambda\textsubscript{2},2\lambda\textsubscript{1}+ \lambda\textsubscript{2})=(0,0)$$
+$$
+\begin{cases}
+  \lambda\textsubscript{1}+4\lambda\textsubscript{2}=0 \\
+       2\lambda\textsubscript{1}+\lambda\textsubscript{2}=0 
+\end{cases}$$
+       
+$$\begin{cases}
+  \lambda\textsubscript{1}=-4\lambda\textsubscript{2} \\
+    2(-4\lambda\textsubscript{2})+\lambda\textsubscript{2}=0 
+\end{cases}$$
+$$\begin{cases}
+  \lambda\textsubscript{1}=0 \\
+    \lambda\textsubscript{2}=0 
+\end{cases}$$
+Due vettori sono \textbf{linearmente dipendenti} quando \textbf{stanno sulla stessa retta} ovvero quando $V\textsubscript{1} = \lambda V \textsubscript{2}$. \\\\ Nel caso in cui una soluzione del sistema dia come risultato $0=0$ significa che il sistema ha infinite soluzioni. Di conseguenza possiamo prendere un \textbf{qualunque} valore. Se i vettori stanno sullo stesso piano allora sono \textbf{linearmente indipendenti}. 
+
+
+\end{document}
+

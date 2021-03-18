@@ -98,6 +98,37 @@ Sia  \textbf{T(n, k)} il tempo totale richiesto da un algoritmo, nel caso pessim
 Definiamo il \textbf{costo ammortizzato} su una sequenza di k operazioni come:
 $$T_\alpha(n)=\frac{T(n,k)}{k}$$
 
+
+\subsection{Algoritmi di visita degli alberi}
+Esistono due tipologie di visita:
+\begin{itemize}
+    \item In profondità (pre-ordine, in-rodine, post-ordine)
+    \item In ampiezza
+\end{itemize}
+Nella visita \textbf{pre-ordine} si parte visitando il nodo della radice per poi passare a visitare tutto il nodo sinistro, risalendo poi andando verso destra.\\\\
+Nella visita \textbf{in-ordine} si parte a visitare dal ramo più in basso a sinistra risalendo per poi andare verso destra. \\\\
+Nella visita \textbf{post-ordine} vengono prima visitati i nodi più in profondità partendo sempre da sinistra verso destra per poi risalire.\\\\
+Nella visita per \textbf{ampiezza} si analizza l'albero a livelli, partendo dalla radice.
+
+\subsection{Alberi AVL}
+Un albero $AVL$ è un albero di ricerca (quasi) bilanciato. Questo albero supporta le operazioni di $insert(), delete(), search()$ con costo $O(log n)$ nel \textbf{caso pessimo}.
+
+\subsubsection{Fattore di bilanciamento}
+Il fattore di bilanciamento $\beta(v)$ di un novo $v$ è dato dalla differenza tra l'altezza del sottoalbero sinistro e del sottoalbero destro di v:
+$$\beta(v) = altezza(v.left)-altezza(v.right)$$
+\subsubsection{Bilanciamento in altezza}
+Un albero si dice \textbf{bilanciato in altezza} se le altezze dei sottoalberi sinitro e destro di ogni nodo differiscono al più di uno.
+$$\beta\leq1$$
+\textbf{Definizione:} un albero $AVL$ è un $ABR$ bilanciato in altezza.
+\subsubsection{Inserimento e rimozione} 
+Inserimenti e rimozioni richiedono di essere modificati per mantenere il bilanciamento dell'albero. \\
+L'operazione fondamentale per ribilanciare l'albero è la \textbf{rotazione semplice}.\\
+\subsubsection{Rotazione a sinistra}
+Per effettuare questa rotazione prendo il nodo problematico e effettuo una rotazione scambiandolo con il successivo ed il nodo scambiato diventerà figlio destro mentre il figlio del nodo precendete diventerà figlio sinistro.
+
+
+
+
 \section{Scelta degli algoritmi}
 A seconda delle operazioni da eseguire è necessario adattare diverse tecniche di implimentazione di un algoritmo.
 \subsubsection{Implementazione su un vettore ordinato} 
@@ -116,16 +147,25 @@ Costi computazionali:
     \item Inserimento $O(1)$
     \item Eliminazione $O(n)$
 \end{itemize}
-\subsection{Algoritmi di visita degli alberi}
-Esistono due tipologie di visita:
+
+\subsubsection{Implementazione alberi ABR}
+Implementazione basata su alberi binari.
+Costi computazionali:
 \begin{itemize}
-    \item In profondità (pre-ordine, in-rodine, post-ordine)
-    \item In ampiezza
+    \item Ricerca $O(h)$
+    \item Inserimento $O(h)$
+    \item Eliminazione $O(h)$
 \end{itemize}
-Nella visita \textbf{pre-ordine} si parte visitando il nodo della radice per poi passare a visitare tutto il nodo sinistro, risalendo poi andando verso destra.\\\\
-Nella visita \textbf{in-ordine} si parte a visitare dal ramo più in basso a sinistra risalendo per poi andare verso destra. \\\\
-Nella visita \textbf{post-ordine} vengono prima visitati i nodi più in profondità partendo sempre da sinistra verso destra per poi risalire.\\\\
-Nella visita per \textbf{ampiezza} si analizza l'albero a livelli, partendo dalla radice.
+
+\subsubsection{Implementazione alberi AVL}
+Implementazione basata su alberi binari a altezza equivalente.
+Costi computazionali:
+\begin{itemize}
+    \item Ricerca $O(log \hspace{0.1cm}n)$
+    \item Inserimento $O(log \hspace{0.1cm}n)$
+    \item Eliminazione $O(log \hspace{0.1cm}n)$
+\end{itemize}
+
 
 
 

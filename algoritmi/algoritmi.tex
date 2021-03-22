@@ -126,6 +126,21 @@ L'operazione fondamentale per ribilanciare l'albero è la \textbf{rotazione semp
 \subsubsection{Rotazione a sinistra}
 Per effettuare questa rotazione prendo il nodo problematico e effettuo una rotazione scambiandolo con il successivo ed il nodo scambiato diventerà figlio destro mentre il figlio del nodo precendete diventerà figlio sinistro.
 
+\subsection{Alberi 2-3}
+Un albeero 2-3 è un alvero in cui:
+\begin{itemize}
+    \item Tutti i percorsi radice-foglia hanno la stessa lunghezza
+    \item Le foglie contengono le chiavi (e i dati da memorizzare) e sono ordinate da sinistra verso destra in ordine di chiave crescente.
+    \item Ogni nodo interno (non folgia) v ha 2 o 3 figli e mantiene due informazioni \begin{itemize}
+        \item S[v], \textbf{chiave massima} nel sottoalbero sinitro (2 o 3 figli)
+        \item M[v], \textbf{chiave massima} nel sottoalbero centrale (3 figli)
+    \end{itemize}
+    \item Distribuzione dei valori $k$ delle chiavi nei sottoalberi: \begin{itemize}
+        \item Sinistro $k \leq S[v]$
+        \item Centro $S[v] < k \leq M[v]$
+        \item Destro $k > M[v]$
+    \end{itemize}
+\end{itemize}
 
 
 
@@ -166,6 +181,14 @@ Costi computazionali:
     \item Eliminazione $O(log \hspace{0.1cm}n)$
 \end{itemize}
 
+\subsubsection{Implementazione alberi 2-3}
+Implementazione basata su alberi binari ordinati con chiavi massime.
+Costi computazionali:
+\begin{itemize}
+    \item Ricerca $O(log \hspace{0.1cm}n)$
+    \item Inserimento $O(log \hspace{0.1cm}n)$
+    \item Eliminazione $O(log \hspace{0.1cm}n)$
+\end{itemize}
 
 
 

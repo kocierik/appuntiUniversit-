@@ -143,6 +143,87 @@ Un albeero 2-3 è un alvero in cui:
 \end{itemize}
 
 
+\subsection{Tabelle Hash}
+Le \textbf{tabelle hash} hanno una implementazione basata su una chiave $k$ e array.\\
+Per ottenere la chiave sono presenti diverse tecniche di calcolo.\\
+Ricapitolando, per realizzare una tabella hash efficiente abbiamo bisogno di:
+\begin{itemize}
+    \item Un vettore
+    \item Una funzione has calcolabile velocemente e che garantisca una buona distribuzione delle chiavi nel vettore
+    \item Un meccanisco per gestire le collisioni 
+\end{itemize}
+\subsubsection{Problema delle collisioni}
+Una funzione hash $h$ si dice \textbf{perfetta} se è iniettiva:
+$$\forall u, \in U: u \neq v \xrightarrow{} h(u) \neq h(v)$$
+Se le collisioni sono inevitabili, è necessario trovare un metodo che le minimizzi, distribuendo \textbf{uniformemente} le chaivi negli indici della tabella hash.
+\subsubsection{Funzioni hash}
+E' necessario fare una premessa; nelle funzioni hash è \textbf{sempre possibile} trasformare una chiave complessa in un numero, (conversione in binario).
+\subsubsection{Metodo dell'estrazione}
+Le caratteristiche di questo metodo sono:
+\begin{itemize}
+    \item Usa solo una parte della chiave
+    \item Si seleziona una sottosequenza di $p$ bit, con $m = 2^p$
+    \item Solitamente dalle posizioni centrali
+\end{itemize}
+\textbf{esempio:} Verranno prese le cifre centrali 101000
+\begin{center}
+ bin(“beer”) = 000010 000101 000101 010010 
+\end{center}
+\begin{itemize}
+    \item \textbf{Vantaggi:} molto veloce da calcolare
+    \item \textbf{Svantaggi} rischio collisioni più alto di altri metodi
+\end{itemize}
+
+\subsubsection{Metodo della divisione}
+Basata sul resto della divisione per $m$:
+\begin{itemize}
+    \item \textbf{Vantaggio:} molto veloce
+    \item \textbf{Svantaggio:} Suscettibile a speficifi valori di $m$. Per risolvere questo problema bisogna scegliere $m$ come numero primo non troppo vicino ad una potenza di 2.
+\end{itemize}
+\textbf{Esempio:}
+$$m=12, k=100 \xrightarrow{} h(k)=4$$
+\subsubsection{Metodo della moltiplicazione}
+Basato sulla moltiplicazione e il resto del numero
+\begin{enumerate}
+    \item Sia $A$ una costante, $0 < A < 1$
+    \item Moltiplichiamo $k$ per $A$ e prendiamo la parte frazionaria
+    \item Moltiplichiamo quest'ultima per $m$ e prendiamo la parte intera
+\end{enumerate}
+\textbf{Esempi:}
+$$m = , k = 3, A = 0.8 \xrightarrow{} h(k) = 2$$
+$$m = 1000,k = 123, A \approx 0.6180339887... \xrightarrow{} h(k) = 18$$
+\begin{itemize}
+    \item \textbf{Svantaggi:} lento (più lento del metodo di divisione)
+    \item \textbf{Vantaggi} Il valore di $m$ non è critico
+    \item \textbf{Come scegliere A?} $A \approx (\sqrt{5}-1)/2 = 0.61803...$ \textbf{(Knuth)}
+\end{itemize}
+\subsubsection{Metodo della codifica algebrica}
+Metodo utilizzando dal compilatore java basato su espressioni algebriche:
+$$h(k) = (k_n x^n + k_n_-_1 x^n^-^1 + ... + k_1 x + k_0) mod \hspace{0.1cm}m$$
+$$k = k_n k_n_-_1 ... k_1k_0$$
+Dove $k_0, k_1...$ possono essere, ad esempio, i bit della \textbf{codifica binaria} di $k$, oppure i \textbf{codici ascii} dei singoli caratteri di $k$.\\ $x$ è un valore \textbf{costante}.
+\begin{itemize}
+    \item \textbf{Vantaggi:} dipende da tutti i bit/caratteri della chiave
+    \item \textbf{Svantaggi:} $n$ addizioni e $n*(n-1)/2$ prodotti
+\end{itemize}
+\subsubsection{Problema delle collisioni}
+Attraverso questi metodi elencati precedentemente siamo riusciti a ridurre il numero di collisioni, ma senza eliminarle.\\
+Per risolvere questo problema la  \textbf{complessita computazionale potrebbe aumentare a $n$}, possono essere utilizzate le seguenti tecniche:
+\begin{enumerate}
+    \item \textbf{Concatenamento}
+    \item \textbf{Indirizzamento aperto}
+\end{enumerate}
+\subsubsection{concatenamento}
+     Nella tecnica di  \textbf{concatenameto} gli elementi con lo stesso valore hash  $h$ vengono memorizzati in una lista concatenata (linked list).\\
+
+Il \textbf{fattore di carico} è dato dal rapporto tra numero di elementi memorizzati e dimensioni della tabella. \\\\
+La \textbf{complessità} del concatenamento è la seguente:
+\begin{itemize}
+    \item insert: $\Theta(1)$
+    \item search: $\Theta(n)$
+    \item delete: $\Theta(n)$
+\end{itemize}
+\subsubsection{indirizzamento aperto}
 
 \section{Scelta degli algoritmi}
 A seconda delle operazioni da eseguire è necessario adattare diverse tecniche di implimentazione di un algoritmo.

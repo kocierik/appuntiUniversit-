@@ -1,5 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage{amsfonts, amssymb, amsmath}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
 \parindent 0px
 
 \begin{document}
@@ -11,7 +13,7 @@
     \item \textbf{Costo:} si riferisce al costo di un singolo algoritmo
 \item \textbf{Complessità:} si riferisce a più risoluzioni di un algoritmo 
 \end{enumerate}
-
+\includegraphics{universe}
 il costo di un blocco \textbf{if-then-else} è  $O(max\{f(n),g(n),h(n)\})$ cioè \textbf{O(1)}.
 
 \subsection{Ordini di grandezza}
@@ -127,7 +129,7 @@ L'operazione fondamentale per ribilanciare l'albero è la \textbf{rotazione semp
 Per effettuare questa rotazione prendo il nodo problematico e effettuo una rotazione scambiandolo con il successivo ed il nodo scambiato diventerà figlio destro mentre il figlio del nodo precendete diventerà figlio sinistro.
 
 \subsection{Alberi 2-3}
-Un albeero 2-3 è un alvero in cui:
+Un albero 2-3 è un albero in cui:
 \begin{itemize}
     \item Tutti i percorsi radice-foglia hanno la stessa lunghezza
     \item Le foglie contengono le chiavi (e i dati da memorizzare) e sono ordinate da sinistra verso destra in ordine di chiave crescente.
@@ -207,7 +209,7 @@ Dove $k_0, k_1...$ possono essere, ad esempio, i bit della \textbf{codifica bina
     \item \textbf{Svantaggi:} $n$ addizioni e $n*(n-1)/2$ prodotti
 \end{itemize}
 \subsubsection{Problema delle collisioni}
-Attraverso questi metodi elencati precedentemente siamo riusciti a ridurre il numero di collisioni, ma senza eliminarle.\\
+Attraverso questi metodi elencati precedentemente siamo riusciti a ridurre il numero di collisioni, ma senza eliminarle.\\\\
 Per risolvere questo problema la  \textbf{complessita computazionale potrebbe aumentare a $n$}, possono essere utilizzate le seguenti tecniche:
 \begin{enumerate}
     \item \textbf{Concatenamento}
@@ -224,7 +226,31 @@ La \textbf{complessità} del concatenamento è la seguente:
     \item delete: $\Theta(n)$
 \end{itemize}
 \subsubsection{indirizzamento aperto}
+L'idea è quella di memorizzare tutte le chiavi nella tabella stessa, ed ogni slot contiene una chiave oppure $null$. \\\\
+\textbf{Inserimento:} se lo slot prescelto è utilizzato, si cerca uno slot alternativo. \\\\
+\textbf{Ricerca:} si cerca nello slot prescelto, epoi negli slot alternativi fino a quando non si trova la chiave oppure $null$.\\\\ 
+Vengono utilizzati diversi algoritmi di indirizzamento, per esempio i seguenti:\\\\
+\textbf{Ispezione lineare}\\
+Il primo elemento determina l'intera sequenza. In questo modo si ottengono \textbf{lunghe sottosequenze}.
+$$h(k,i) = (h' (k) + 1)$$
+\\
+\textbf{Ispezione quadratica:}\\
+L'ispezione iniziale è in $h'(k)$, mentre le succesive hanno un offset che dipende da una \textbf{funzione quadratica nel numero di ispezione}.
+$$h'(k) + c_1i + c_2 i^2$$
+\\
+\textbf{Doppio hashing:}\\
+Formato da \textbf{due funzioni ausiliari} di cui la prima $h_1$ fornisce la prima ispezione, mentre $h_2$ fornisce l'offset delle succesive ispezioni.
+$$h(k,i) = (h_1(k) + i h_2(k))$$
 
+\subsubsection{Conclusioni hash table}
+Usare funzioni hash $h(k)$ che producano valori il più possibile uniformemente distribuiti è molto importante perchè altrimenti potremmo arrivare ad una complessità computazionale pari a $O(n)$.\\\\
+\textbf{Problemi con hashing:}
+\begin{itemize}
+    \item Scarsa locality of reference (cache miss)
+    \item In base all'implementazione è in genere difficile ottenere le chiavi in ordine
+    \item Sebbene il costo medio per operazione sia basso, la singola operazione può risultare molto costosa, ad esempio se occorre ridimensionare la tabell ae redistribuire le chiavi.
+\end{itemize}
+\newpage
 \section{Scelta degli algoritmi}
 A seconda delle operazioni da eseguire è necessario adattare diverse tecniche di implimentazione di un algoritmo.
 \subsubsection{Implementazione su un vettore ordinato} 
@@ -271,6 +297,18 @@ Costi computazionali:
     \item Eliminazione $O(log \hspace{0.1cm}n)$
 \end{itemize}
 
+\subsubsection{Hash table}
+Implementazione basata su array, dove l'elemento con chiave $k$ è memorizzato nel $k-esimo$ "slot" dell'array.
 
+\begin{itemize}
+    \item Ricerca caso medio $O(1)$ \hspace{2cm} Ricerca caso pessimo $O(n)$
+    \item Inserimento caso medio $O(1)$ \hspace{1.2cm} Inserimento caso pessimo $O(n)$
+    \item Eliminazione caso medio $O(1)$
+    \hspace{1cm} Eliminazione caso pessimo $O(n)$
+\end{itemize}
 
+\subsection{Riepilogo}
+\begin{center}
+\includegraphics[width=12cm]{images/complessita.png}
+\end{center}
 \end{document}

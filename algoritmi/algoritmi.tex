@@ -311,4 +311,54 @@ Implementazione basata su array, dove l'elemento con chiave $k$ è memorizzato n
 \begin{center}
 \includegraphics[width=12cm]{images/complessita.png}
 \end{center}
+
+
+\section{Algoritmi di ordinamento}
+\subsubsection{ordinamento in loco:}
+L'algoritmo permuta gli elementi direttamente nell'array
+originale, senza usare un altro array di appoggio.
+\subsubsection{ordinamento stabile:}
+L'algoritmo preserva l'ordine con cui elementi con la stessa
+chiave compaiono nell'array originale.
+\subsection{Selection sort}
+Cerca il minimo in $A[k+1..n]$ e spostalo in posizione $k+1$.\\
+La complessita di questo logaritmo è pari a:
+$$O(n^2)$$
+\begin{center}
+\includegraphics[width=5cm]{images/selectionSort.png}
+\end{center}
+\subsection{Insertion sort}
+Inserisco l'elemento di posizione k+1 nella \textbf{posizione corretta} all'interno dei primi k elementi ordinati. Al termine del passo k, il vettore ha le prime k componenti  ordinate.\\
+Il costo computazionale di questo algoritmo è:
+$$O(n^2)$$
+\begin{center}
+\includegraphics[width=5cm]{images/insertionSort.png}
+\end{center}
+\newpage
+\subsection{Bubble sort}
+Ad ogni scansione scambia le coppie di elementi adiacenti che non sono nell'ordine corretto.\\
+Ad ogni scansione \textbf{scambia le coppie di elementi adiacenti}.
+Dopo la prima scansione, l'elemento massimo occupa l'ultima posizione, dopo la k-esima scansione, i k elementi massimi
+occupano la posizione corretta in fondo all'array.
+Nel caso $pessimo--ottimo$ bubble Sort ha costo:
+$$\Theta(n^2) \hspace{1cm} \Theta(n)$$
+\begin{center}
+\includegraphics[width=7cm]{images/bubbleSort1.png}
+\includegraphics[width=7cm]{images/bubbleSort2.png}
+\includegraphics[width=7cm]{images/bubbleSort3.png}
+\end{center}
+\newpage
+\subsection{Quick sort}
+Scegli un elemento x del vettore v, e \textbf{partiziona il vettore in due parti} considerando gli elementi $\leq x$ e quelli $>x$\\
+Ordina ricorsivamente le due parti.\\
+Restituisci il risultato concatenando le due parti ordinate.
+\subsubsection{Partizionamento}
+Manteniamo due indici, inf e sup, che vengono fatti \textbf{scorrere dalle estremità} del vettore verso il centro. Quando entrambi (inf e sup) non possono essere fatti avanzare verso il centro, si \textbf{scambia} $A[inf]$ e $A[sup]$.\\
+Il costo quick sort: Dipende dal partizionamento: 
+\begin{center}
+\textbf{caso peggiore:} $\Theta(n^2)$ \hspace{2cm} \textbf{caso migliore:} $\Theta(n \hspace{0.1cm}log \hspace{0.1cm}n)$
+\end{center}
+\begin{center}
+\includegraphics[width=7cm]{images/quickSort.png}
+\end{center}
 \end{document}

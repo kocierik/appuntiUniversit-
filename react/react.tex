@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{amsfonts, amssymb, amsmath}
+\usepackage{graphicx}
 \begin{document}
 \title{React}
 \author{Koci Erik}
@@ -46,11 +47,27 @@ L'interazione tra utente e interfaccia è dettata soprattutto dalla proprietà o
 \texttt{onChange:} \textbf{Cambio dell'opzione} selezionata dall'utente \\
 \texttt{onSubmit:} Quando il form viene \textbf{inviato} \\
 
+\section{useContext}
+Utilizzando \textbf{useContext} siamo in grado di rendere delle proprietà \textbf{visibili a tutti i componenti figli} senza passare i valori tramite props.\\\\
+Il valore di useContext è determinato dal tag \texttt{<MyContext.Provider>} il quale assumerà le props da rendere disponibili a tutti i figli.\\
+Bisogna ricordarsi inoltre che l'argomento da passare alla funzione useContext deve essere un oggetto!
+Per creare un \texttt{context} dobbiamo utilizzare \texttt{createContext}.
+$$createContext()$$
+$$useContext(MyContext)$$
 
+\includegraphics[width=14cm]{images/useContext.png}
+\\\\
+Quando un componente chiama \textbf{useContext} esso sarà sempre rirenderizzato ogni volta che \texttt{value} cambia.
+In questo esempio potremo usare le proprietà date dal componente \textbf{App} nel componente \texttt{ThemedButton}, richiamando useContext.
 
 \section{Accorgimenti}
 In presenza di un \textbf{if} nel quale abbiamo solo la condizione then, per stampare ad esempio un paragrafo avendo delle condizioni, possiamo utilizzare questa sintassi:\\\\
 \texttt{\{ eta>=18 and and <h3>Sono maggiorenne</h3> \} }\\\\
 La notazione degli \textbf{Hook} equivale alle funzioni.\\\\
-Per \textbf{bloccare} un comportamento predefinito di un tag \texttt{html}, si deve richiamare \texttt{e.preventDefault}.
+Per \textbf{bloccare} un comportamento predefinito di un tag \texttt{html}, si deve richiamare \texttt{e.preventDefault}.\\\\
+
+\subsubsection{React.memo}
+React.memo è un cosiddetto higher order component (componente di ordine superiore). \\
+Se il  componente renderizza lo stesso risultato a partire dalle stesse props, esso si può racchiudere in una chiamata a React.memo per ottenere un miglioramento della performance, in alcuni casi tramite la memoizzazione del risultato. In altre parole, React eviterà di ri-renderizzare il componente, riutilizzando l’ultima renderizzazione.\\
+Questo metodo esiste solamente come \textbf{strumento per ottimizzare la performance}. Non utilizzarlo per “prevenire” la renderizzazione, in quanto farlo può essere causa di bug.
 \end{document}

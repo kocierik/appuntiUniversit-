@@ -374,4 +374,64 @@ $A2[]$ per ottenere l'array $A[]$ ordinato.
 \begin{center}
 \includegraphics[width=9cm]{images/mergeSort.png}
 \end{center}
+
+\subsection{Heapsort}
+Funzionamento: 
+\begin{enumerate}
+    \item Costruire un \textbf{max-heap} a partire dal vettore A[] originale, mediante l'operazione \textbf{heapify()}
+    \item Estrarre il \textbf{massimo} $( findMax() + deleteMax() )$
+    \item \textbf{Inserire} il massimo in ultima posizione di A[].
+    \item \textbf{Ripetere} il punto 2. finché lo heap diventa vuoto
+\end{enumerate}
+\newpage
+\subsubsection{Albero binario perfetto}
+Un albero binario è \textbf{perfetto} se:
+
+
+\begin{itemize}
+    \item Tutte le foglie hanno la stessa altezza h
+    \item Nodi interni hanno grado 2
+\end{itemize}
+ Un albero perfetto ha altezza $h\hspace{0.1cm} \simeq log \hspace{0.1cm} N$  \\
+ Il numero di nodi è $ N = nodi = 2^h^+^1 -1$
+ 
+ \subsubsection{Albero binario completo}
+ Un albero binario è \textbf{completo} se:
+\begin{itemize}
+    \item Tutte le foglie hanno profondità h o h-1
+    \item Tutti i nodi a livello h sono “accatastati” a
+    sinistra
+    \item Tutti i nodi interni hanno grado 2, eccetto al più uno
+\end{itemize}
+\subsubsection{Max-heap}
+Un albero binario completo è un albero \textbf{max-heap} sse:
+\begin{itemize}
+    \item Ad ogni nodo i viene associato un valore $A[i]$
+    \item $A[Parent(i)] \geq A[i]$
+\end{itemize}
+\subsubsection{Min-heap}
+Un albero binario completo è un albero \textbf{min-heap} sse:
+\begin{itemize}
+    \item Ad ogni nodo i viene associato un valore $A[i]$
+    \item $A[Parent(i)] \leq A[i]$
+\end{itemize}
+\newpage
+
+\subsection{Operazioni su array heap}
+\subsubsection{findMax()} 
+Individua il valore massimo contenuto in uno heap.\\
+Il massimo è sempre la radice, ossia A[1].\\
+L'operazione ha costo $\Theta(1)$.
+
+\subsubsection{fixHeap()}
+Ripristinare la proprietà di max-heap.\\
+Supponiamo di rimpiazzare la radice $A[1]$ di un max-heap
+con un valore qualsiasi, vogliamo fare in modo che $A[]$ diventi nuovamente uno heap.
+
+\subsubsection{heapify()}
+Costruire uno heap a partire da un array privo di alcun ordine.
+
+\subsubsection{deleteMax()}
+Rimuovi l'elemento massimo da un maxheap $A[]$.
+
 \end{document}

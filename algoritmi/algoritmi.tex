@@ -322,7 +322,7 @@ L'algoritmo preserva l'ordine con cui elementi con la stessa
 chiave compaiono nell'array originale.
 \subsection{Selection sort}
 Cerca il minimo in $A[k+1..n]$ e spostalo in posizione $k+1$.\\
-La complessita di questo logaritmo è pari a:
+La complessita di questo algoritmo è pari a:
 $$O(n^2)$$
 \begin{center}
 \includegraphics[width=5cm]{images/selectionSort.png}
@@ -360,5 +360,18 @@ Il costo quick sort: Dipende dal partizionamento:
 \end{center}
 \begin{center}
 \includegraphics[width=7cm]{images/quickSort.png}
+\end{center}
+
+\newpage
+
+\subsection{Merge Sort}
+
+Questo algoritmo \textbf{divide} $A[]$ in \textbf{due meta'} $A1[]$ e $A2[]$(senza permutare) di dimensioni uguali;\\
+Applica \textbf{ricorsivamente} Merge Sort a
+$A1[]$ e $A2[]$.\\
+\textbf{Fonde} (merge) gli array ordinati $A1[]$ e
+$A2[]$ per ottenere l'array $A[]$ ordinato.
+\begin{center}
+\includegraphics[width=9cm]{images/mergeSort.png}
 \end{center}
 \end{document}

@@ -434,6 +434,55 @@ Costruire uno heap a partire da un array privo di alcun ordine.
 \subsubsection{deleteMax()}
 Rimuovi l'elemento massimo da un maxheap $A[]$.
 
+\subsubsection{Esempio heapSort:}
+\begin{center}
+\includegraphics[width=10cm]{images/heapSort.png}
+\end{center}
+
+\includegraphics[width=16cm]{images/sommarioAlgoritmi.png}
+
+
+\section{Tecniche lineari di ordinamento}
+\subsection{Counting Sort}
+I valori di $A[0..n-1]$ appartengono all'intervallo $[0, k-1]$
+(ciascun valore può comparire zero o più volte).\\
+Costruisco un array $Y[0, k-1]$; $Y[i]$ conta il numero di volte in
+cui il valore i compare in $A[]$.\\
+Ricolloco i valori così ottenuti in A.\\
+\textbf{Counting Sort: Costo}
+$$O(max\{n,k\}) = O(n+k) = O(n)$$
+
+\begin{center}
+\includegraphics[width=5cm]{images/countingSort.png}
+\end{center}
+
+
+
+\subsection{Bucket Sort}
+Cosa succede se i valori da ordinare non sono numeri interi,
+ma record associati ad una chiave?\\
+Possiamo usare liste concatenate.
+\begin{center}
+\includegraphics[width=12cm]{images/bucketSort.png}
+\end{center}
+\\
+\textbf{Bucket Sort: Costo}
+$$O(n+k)$$
+
+\subsection{Radix Sort}
+Supponiamo di voler ordinare n numeri con 4 cifre decimali.\\
+Questo richiederebbe $n+10000$ operazioni; se $n \hspace{0.1cm} log \hspace{0.1cm} n < n+10000$, questo non sarebbe conveniente.\\
+Prima ordino in base alla cifra delle \textbf{unità}.\\
+Poi ordino in base alla cifra delle \textbf{decine}.\\
+Poi ordino in base alla cifra delle \textbf{centinaia}.\\
+
+\begin{center}
+\includegraphics[width=12cm]{images/radixSort.png}
+\end{center}
+
+
+
+
 \section{Selezione del k-esimo}
 Consideriamo il seguente problema:\\
 \textbf{Selezione del k-esimo minimo}: dato un array $A[1..n]$ di valori

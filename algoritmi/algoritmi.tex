@@ -434,4 +434,37 @@ Costruire uno heap a partire da un array privo di alcun ordine.
 \subsubsection{deleteMax()}
 Rimuovi l'elemento massimo da un maxheap $A[]$.
 
+\section{Selezione del k-esimo}
+Consideriamo il seguente problema:\\
+\textbf{Selezione del k-esimo minimo}: dato un array $A[1..n]$ di valori
+distinti e un valore $1 \leq k \leq n$, trovare l'elemento che è
+maggiore di esattamente $k-1$ elementi.\\
+\textbf{Mediano}: il valore che occuperebbe la posizione $(n/2)$ se
+l'array fosse ordinato.\\
+I \textbf{motori di ricerca} producono molti risultati a fronte di
+una singola query. I risultati vengono mostrati in pagine, in ordine
+decrescente di rilevanza. È \textbf{inutile ordinare tutti i risultati} in base alla rilevanza.\\
+Verifichiamo ora i costi computazionali dei singoli casi:\\
+\textbf{Ricerca del minimo:}\\
+$$T(n) = n-1 = \Theta(n)$$
+\textbf{Ricerca del secondo minimo:}\\
+$$T(n) = 2n-3 = \Theta(n)$$
+\textbf{Selezione del k-esimo elemento:}\\
+$$T(n) = \Theta(kn)$$
+\textbf{Selezione del valore mediano:}\\
+$$T(n) = O(n + k\hspace{0.1cm} log\hspace{0.1cm} n) = O(n + (n/2) log \hspace{0.1cm} n) = O(n \hspace{0.1cm} log \hspace{0.1cm} n)$$
+\subsubsection{Adattamento di quicksort al
+problema della selezione:}
+In questo modo divido il mio array in più partizioni, andando a eliminare quelle inutili.
+\begin{center}
+\includegraphics[width=8cm]{images/partizionamento1.png}
+\includegraphics[width=8cm]{images/partizionamento2.png}
+\end{center}
+\subsubsection{Analisi dell'algoritmo quickSelect()}
+\textbf{Costo nel caso ottimo:}\\
+$$T(n) = T(n/2) + n = \Theta(n)$$
+\textbf{Costo nel caso pessimo:}\\
+$$T(n) = T(n-1) + n = \Theta(n^2)$$
+\textbf{Costo nel caso medio:}\\
+$$T(n) \leq 4n$$
 \end{document}

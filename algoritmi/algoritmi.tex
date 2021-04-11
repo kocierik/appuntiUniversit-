@@ -516,4 +516,29 @@ $$T(n) = T(n/2) + n = \Theta(n)$$
 $$T(n) = T(n-1) + n = \Theta(n^2)$$
 \textbf{Costo nel caso medio:}\\
 $$T(n) \leq 4n$$
+
+\section{Code con priorità}
+Le code con priorità sono strutture dati che mantengono il minimo (massimo) in un insieme dinamico di chiavi. 
+$$ coda = key | elem $$
+Sono presenti due possibili implementazioni:
+\begin{itemize}
+    \item d-heap
+    \item heap binomiali e heap di fibonacci
+\end{itemize}
+\subsubsection{d-heap}
+Un d-heap è un albero d-ario con le seguenti proprietà:
+\begin{enumerate}
+    \item Un d-heap di altezza $h$ è perfetto almeno fino alla profondità $h-1$; le foglie al livello $h$ sono accatastate a sinistra.
+    \item Ciascun nodo $v$ contiene una $chiave(v)$ e un elemento $elem(v)$. Le chiavi appartengono ad un dominio totalmente ordinato.
+    \item Ogni nodo diverso dalla radice ha chiave non inferiore $(\geq)$ a quella del padre.
+\end{enumerate}
+\newpage
+\textbf{Esempio d-heap:} $d = 3$
+\begin{center}
+\includegraphics[width=12cm]{images/d-heap.png}
+\end{center}
+Un d-heap con n nodi ha \textbf{altezza} $O(log_d \hspace{0.1cm} n)$
+\begin{center}
+\includegraphics[width=12cm]{images/costiD-heap.png}
+\end{center}
 \end{document}

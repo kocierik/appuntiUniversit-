@@ -541,4 +541,55 @@ Un d-heap con n nodi ha \textbf{altezza} $O(log_d \hspace{0.1cm} n)$
 \begin{center}
 \includegraphics[width=12cm]{images/costiD-heap.png}
 \end{center}
+
+\newpage
+
+\section{Union find}
+L'\textbf{union find} è una struttura dati basata sugli insiemi.\\
+Essa può creare un insieme a partire da un singolo elemento, unire due insiemi, identificare l'insieme a cui appartiene un elemento. Gli insiemi contengono complessivamente $n \leq k$ elementi. Ogni insieme è identificato da un rappresentante univoco.\\
+\textbf{Operazioni Union find:}
+
+\begin{itemize}
+    \item $makeSet(elem \hspace{0.1cm} x)$:  Crea un insieme il cui unico elemento (e rappresentante) è $x$. Esso non deve appartenere ad un altro insieme esistente.
+    \item $find(elem \hspace{0.1cm} x) \xrightarrow{} name$: Restituisce il rappresentante dell’unico insieme contenente $x$.
+    \item $union(name \hspace{0.1cm} x, name \hspace{0.1cm} y)$: Unisce i due insiemi rappresentati da $x$ e da $y$. Assumiamo che il nome del nuovo insieme sia $x$. I vecchi insiemi devono essere distrutti. 
+\end{itemize}
+\textbf{Esempio:}
+\begin{center}
+\includegraphics[width=12cm]{images/unionFind.png}
+\end{center}
+
+\newpage
+
+\subsection{QuickFind}
+Ogni insieme viene rappresentato con un \textbf{albero} di altezza uno.
+\begin{itemize}
+    \item Le foglie dell'albero contengono gli elementi dell'insieme.
+    \item Il rappresentante è la radice.
+\end{itemize}
+\begin{center}
+\includegraphics[width=12cm]{images/operazioniUnionFind.png}
+\end{center}
+
+\newpage
+
+\subsection{QuickUnion}
+Implementazione basata su foresta.
+\begin{itemize}
+    \item Si rappresenta ogni insieme tramite un albero radicato generico.
+    \item Ogni nodo dell'albero contiene l'oggetto e il puntatore al padre.
+    \item Il rappresentante è la radice.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=12cm]{images/quickUnion.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=12cm]{images/riepilogoUnionFind.png}
+\end{center}
+
+E' conveniente utilizzare \textbf{QuickFind} quando le $union()$ sono rare e le $find()$ frequenti.\\
+E' conveniente utilizzare \textbf{QuickUnion} quando le $find()$ sono rare e le $union()$ frequenti.\\
+
 \end{document}

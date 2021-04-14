@@ -592,4 +592,27 @@ Implementazione basata su foresta.
 E' conveniente utilizzare \textbf{QuickFind} quando le $union()$ sono rare e le $find()$ frequenti.\\
 E' conveniente utilizzare \textbf{QuickUnion} quando le $find()$ sono rare e le $union()$ frequenti.\\
 
+\newpage
+
+\section{Divide et Impera}
+\begin{itemize}
+    \item Divide-et-impera \begin{itemize}
+        \item Un problema viene suddiviso in sotto-problemi, che vengono risolti ricorsivamente (top-down).
+    \end{itemize}
+    \item Algoritmi greedy \begin{itemize}
+        \item Ad ogni passo si fa sempre la scelta che in quel momento appare ottima; le scelte fatte non vengono mai disfatte
+    \end{itemize}
+    \item Programmazione dinamica \begin{itemize}
+        \item La soluzione viene costruita (bottom-up) a partire da un insieme di sotto-problemi
+    \end{itemize}
+\end{itemize}
+
+Tecnica divisa in \textbf{3 fasi} fondamentali:
+\begin{enumerate}
+    \item \textbf{Divide:} Dividi il problema in sotto-problemi indipendenti, di dimensioni $minori$.
+    \item  \textbf{Impera:} Risolvi i sotto-problemi ricorsivamente.
+    \item \textbf{Combina:} Unisci le soluzioni dei sottoproblemi per costruire la soluzione del problema di partenza
+\end{enumerate}
+
+
 \end{document}

@@ -614,5 +614,30 @@ Tecnica divisa in \textbf{3 fasi} fondamentali:
     \item \textbf{Combina:} Unisci le soluzioni dei sottoproblemi per costruire la soluzione del problema di partenza
 \end{enumerate}
 
+\subsection{Algoritmi greedy}
+Quando applicare la tecnica greedy?
+\begin{itemize}
+    \item Quando è possibile dimostrare che esiste una \textbf{scelta ingorda}.
+    \begin{itemize}
+        \item Fra le molte scelte possibili, se ne può facilmente individuare una che porta sicuramente alla soluzione ottima.
+    \end{itemize}
+    \item Quando il problema ha \textbf{sottostruttura ottima}.
+    \begin{itemize}
+        \item “Fatta tale scelta, resta un sottoproblema con la stessa
+        struttura del problema principale”.
+    \end{itemize}   
+\end{itemize}
+
+\subsection{Algoritmo di scheduling}
+Algoritmo che si basa in base al tempo medio di eseguzione:
+\begin{itemize}
+    \item 1 processore, n job $p_1$ , $p_2$, ..., p.
+    \item Ogni job $p_i$ ha un tempo di esecuzione $t[i]$.
+    \item Minimizzare il tempo medio di completamento.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=12cm]{images/scheduling.png}
+\end{center}
 
 \end{document}

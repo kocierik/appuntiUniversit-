@@ -640,4 +640,92 @@ Algoritmo che si basa in base al tempo medio di eseguzione:
 \includegraphics[width=12cm]{images/scheduling.png}
 \end{center}
 
+
+\subsection{Codifica di Huffman}
+
+Questa codifica viene utilizzata per risolvere il problema di compressione, (compressione di un file). Viene utilizzata una tecnica detta \textbf{codifica di caratteri}
+\begin{itemize}
+    \item Si usa una \textbf{funzione di codifica f: $f(c) = x$}
+    \begin{enumerate}
+        \item $c$ è un carattere preso da un alfabeto $\sum$
+        \item $x$ è una rappresentazione binaria del carattere $c$
+        \item $c$ è rappresenrtato da $x$ in modo efficiente
+    \end{enumerate}
+    \item Una sequenza di caratteri $c_1 c_2 c_n$ viene codificato con la sequenza di bit $f(c_1)f(c_2)f(c_n)$
+    \item data una qualsiasi codifica, deve essere sempre possibile decodificarla durante la lettura seuqenziale bit-dopo-bit.
+\end{itemize}
+Dobbiamo utilizzare una codifica che minimizza la dimensione del nostro file.
+
+\subsubsection{Codifica a lunghezza fissa}
+\begin{center}
+\includegraphics[width=12cm]{images/fissa.png}
+\end{center}
+\begin{itemize}
+    \item Supponiamo di avere un file di $n$ caratteri.
+    \item Codifica tramite ASCII (8 bit per carattere).
+    \item Codifica basata sull'alfabeto ( 3 bit per carattere).
+\end{itemize}
+
+\subsubsection{Codifica a lunghezza variabile}
+\begin{center}
+\includegraphics[width=12cm]{images/variabile.png}
+\end{center}
+\begin{itemize}
+    \item Codifica a lunghezza variabile
+    \item \textbf{codice a prefisso} (senza prefissi):
+    \begin{itemize}
+        \item \textbf{nessun codice è un prefisso di un altro codice}.
+        \item Condizione richiesta per permettere sempre la decodifica durante la lettura bit-dopo-bit.
+    \end{itemize}
+\end{itemize}
+In questo modo avendo dei \textbf{prefissi univoci}, non appena troviamo una sequenza di bit possiamo risalire alla decodifica della parola. In questo modo \textbf{lettere frequenti} saranno composte da \textbf{pochi bit}.
+
+\newpage
+
+\subsubsection{Codici di Huffman}
+Rappresentazione del codice come un albero binario
+\begin{itemize}
+    \item Figlio sinistro: $0$ \hspace{1cm} Figlio destro: $1$
+    \item Caratteri dell'alfabeto sulle foglie
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=13cm]{images/codificaAlbero.png}
+\end{center}
+Questo esempio per essere ottimizzato deve avere anche un figlio destro al primo livello di profondità.
+\begin{center}
+\includegraphics[width=10cm]{images/codificaAlbero2.png}
+\end{center}
+Il \textbf{principio del codice di Huffman} è:
+\begin{itemize}
+    \item \textbf{Minimizzare la lunghezza dei caratteri} che compaiono più frequentemente.
+    \item Assegnare ai caratteri con la frequenza i codici corrispondenti ai percorsi più lunghi all'interno dell'albero.
+\end{itemize}
+\begin{enumerate}
+    \item Inizialmente costruiamo una lista ordinata di nodi, in cui ogni nodo continee un carattere e il numero di volte in cui quel carattere compare nel file.
+    $$ "f":5 \hspace{0.5cm} "e":9 \hspace{0.5cm} "c":12 \hspace{0.5cm} "b":13 \hspace{0.5cm} "d":16 \hspace{0.5cm} "a":45 $$
+    \item Rimuovere i due nodi con frequenze minori.
+    \item Collegarli ad un nodo padre etichettato con la frequenza combinata (sommata).
+    $$"c":12 \hspace{0.5cm} "b":13 \hspace{0.5cm} "d":16 \hspace{0.5cm} "a":45 $$
+    \item Aggiungere il nodo combinato alla lista, mantenendola ordinata in base alla frequenza.
+\end{enumerate}
+\begin{center}
+\includegraphics[width=8cm]{images/huffmanFinale.png}
+\end{center}
+\textbf{Vantaggi:}
+\begin{itemize}
+    \item Semplici da programmare
+    \item Solitamente efficienti
+    \item Quando è possibile dimostrare la proprietà di scelta greedy
+        danno la soluzione ottima
+    \item  La soluzione sub-ottima può essere accettabile
+\end{itemize}
+
+\textbf{Svantaggi:}
+\begin{itemize}
+    \item Non tutti i problemi ammettono una soluzione greedy
+    \item Quindi, in certi casi gli algoritmi greedy non possono essere
+          usati se si vuole la soluzione ottima 
+\end{itemize}
+
 \end{document}

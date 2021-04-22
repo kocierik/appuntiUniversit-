@@ -733,9 +733,39 @@ Il \textbf{principio del codice di Huffman} è:
 \includegraphics[width=12cm]{images/DivideDinamica.png}
 \end{center}
 \begin{enumerate}
-    \item \textbf{Sottostruttura ottimale}, deve essere possibile combinare le soluzioni dei sottoproblemi.
+    \item \textbf{Sottostruttura ottimale}, deve essere possibile combinare le soluzioni dei sottoproblemi. 
     \item \textbf{Sottoproblemi ripetuti}, che ricompaiono constantemente.
 \end{enumerate}
 
+\newpage
+\subsection{Distanza di Levenshtein}
+
+Tecnica utilizzata dai correttori ortografici. Basata su:
+\begin{itemize}
+    \item Concetto di edit distance:
+    \begin{itemize}
+        \item Numero di operazioni di “editing” che sono necessarie per
+        trasformare una stringa S in una nuova stringa T.
+    \end{itemize}
+    \item Transformazioni ammesse:
+    \begin{itemize}
+        \item Lasciare immutato il carattere corrente (costo 0).
+        \item Cancellare un carattere (costo 1).
+        \item Inserire un carattere (costo 1).
+        \item Sostituire il carattere corrente con uno diverso (costo 1).
+    \end{itemize}
+    \item Dopo ciascuna operazione ci si sposta sul carattere
+    successivo:
+    \begin{itemize}
+        \item Si inizia dal primo carattere di $S$.
+    \end{itemize}
+\end{itemize}
+
+La \textbf{distanza di levenshtein} tra $S[1..n]$ e $T[1..m]$ è il \textbf{costo minimo} tra tutte le sequenze di operazioni di editing che trasformano $S$ in $T$.\\\\
+\textbf{Esempio:}\\
+- Determinare il numero minimo di operazioni di editing necessarie per trasformare il prefisso $S[1..i]$ di $S$ nel prefisso $T[1..j$ di $T$.\\
+- La definizione della soluzione è data da $L[1..j]$.
+- La distanza di Levenshtein tra $S[1..n]$ e$T[1..m]$ è il valore $L[n,m]$.
+  
 
 \end{document}

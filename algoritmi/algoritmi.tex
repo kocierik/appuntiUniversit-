@@ -767,5 +767,144 @@ La \textbf{distanza di levenshtein} tra $S[1..n]$ e $T[1..m]$ è il \textbf{cost
 - La definizione della soluzione è data da $L[1..j]$.
 - La distanza di Levenshtein tra $S[1..n]$ e$T[1..m]$ è il valore $L[n,m]$.
   
+\newpage
+  
+\section{Grafi}
+
+\subsection{Grafici orientati e non orientati}
+\begin{itemize}
+    \item Un \textbf{Grafico orientato G} è una coppia $(V,E)$ dove:
+    \begin{itemize}
+        \item Insieme finito dei \textbf{vertici V}
+        \item Insieme degli \textbf{archi E}: relazione binaria tra vertici
+    \end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=8cm]{images/grafoOrientato.png}
+\end{center}
+
+\begin{itemize}
+    \item Un \textbf{grafo non orientato G} è una coppia $(V,E)$ dove:
+    \begin{itemize}
+        \item Insieme finito dei \textbf{vertici V}
+        \item Insieme degli \textbf{archi E}: coppie non ordinate
+    \end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=8cm]{images/grafoNonOrientato.png}
+\end{center}
+
+\subsection{Problemi sui grafi}
+
+\begin{itemize}
+    \item Visite
+    \begin{itemize}
+        \item Visite in ampiezza
+        \item Visite in profondità
+    \end{itemize}
+    \item Alberi di copertura minimi
+    \item Cammini minimi
+    \begin{itemize}
+        \item Da singola sorgente
+        \item Fra tutte le coppie dei vertici 
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Incidenza e adiacenza}
+\begin{itemize}
+    \item In un grafo orientato l'arco \textbf{(v,w)} è \textbf{incidente} da $v$ a $w$
+    \item Un vertice $w$ è adiacente a $v$ se e solo se $(v, w) \in E$
+    \item In un grafo non orientato la relazione di adiacenza tra
+     vertici è simmetrica
+\end{itemize}
+\begin{center}
+\includegraphics[width=10cm]{images/grafoincidente.png}
+\end{center}
+
+\newpage
+
+\begin{center}
+\includegraphics[width=8cm]{images/interfaceGrafi.png}
+\end{center}
+
+
+$n$ = vertici\\
+$m$ = numero archi
+\subsection{Rappresentazioni di grafi}
+\begin{itemize}
+    \item Liste di archi:
+    \begin{itemize}
+        \item  grado = $O(m)$
+        \item  archiIncidenti = $O(m)$
+        \item  sonoAdiacenti = $O(m)$
+        \item  aggiungiVertice = $O(1)$
+        \item  aggiungiArco = $O(1)$
+        \item  rimuoviVertice = $O(m)$
+        \item  rimuoviArco = $O(1)$
+    \end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=7cm]{images/listeArchi.png}
+\end{center}
+$\delta$ = grado
+\begin{itemize}
+    \item Liste di incidenza
+    \begin{itemize}
+        \item  grado = $O(\delta(n))$
+        \item  archiIncidenti = $O(\delta(n))$
+        \item  sonoAdiacenti = $O(min{\delta(x), \delta(y)})$
+        \item  aggiungiVertice = $O(1)$
+        \item  aggiungiArco = $O(1)$
+        \item  rimuoviVertice = $O(m)$
+        \item  rimuoviArco = $O(\delta(x)+\delta(y))$
+    \end{itemize}
+\end{itemize}
+
+
+\begin{center}
+\includegraphics[width=10cm]{images/listeIncidenza.png}
+\end{center}
+
+
+\begin{itemize}
+    \item Matrice di adiacenza
+    \begin{itemize}
+        \item  grado = $O(n)$
+        \item  archiIncidenti = $O(n)$
+        \item  sonoAdiacenti = $O(1)$
+        \item  aggiungiVertice = $O(n^2)$
+        \item  aggiungiArco = $O(1)$
+        \item  rimuoviVertice = $O(n^2)$
+        \item  rimuoviArco = $O(1)$
+    \end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=12cm]{images/listeMatrice.png}
+\end{center}
+
+
+\begin{itemize}
+    \item Liste di adiacenza
+    \begin{itemize}
+        \item  grado = $O(\delta(v))$
+        \item  archiIncidenti = $O(\delta(v))$
+        \item  sonoAdiacenti = $O(min{\delta(x), \delta(y)})$
+        \item  aggiungiVertice = $O(1)$
+        \item  aggiungiArco = $O(1)$
+        \item  rimuoviVertice = $O(m)$
+        \item  rimuoviArco = $O(\delta(x)+\delta(y))$
+    \end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=12cm]{images/listeAdiacenza.png}
+\end{center}
+
+
+
+
+
 
 \end{document}

@@ -828,8 +828,8 @@ La \textbf{distanza di levenshtein} tra $S[1..n]$ e $T[1..m]$ è il \textbf{cost
 \end{center}
 
 
-$n$ = vertici\\
-$m$ = numero archi
+$n$ = \textbf{vertici}\\
+$m$ = \textbf{numero archi}
 \subsection{Rappresentazioni di grafi}
 \begin{itemize}
     \item Liste di archi:
@@ -902,9 +902,99 @@ $\delta$ = grado
 \includegraphics[width=12cm]{images/listeAdiacenza.png}
 \end{center}
 
+\subsection{Grafi pesati}
+In alcuni casi ogni arco ha un \textbf{peso} (o \textbf{costo}) associato.Il costo può essere determinato tramite una funzione di costo c: $E \in R$, dove $R$ è l’insieme dei numeri reali. Quando tra due vertici non esiste un arco, si dice che il costo è \textbf{infinito}.
 
+\subsection{Grado}
+In un \textbf{grafo non orientato}, il \textbf{grado} di un vertice è il \textbf{numero di archi} che partono da esso.
 
+\begin{center}
+\includegraphics[width=10cm]{images/gradoGrafi.png}
+\end{center}
 
+\begin{itemize}
+    \item In un \textbf{grafo orientato}, il grado entrante (uscente) di un
+vertice è il \textbf{numero di archi incidenti} in (da) esso
+\item In un \textbf{grafo orientato} il grado di un vertice è la \textbf{somma} del suo grado entrante e del suo grado uscente
+\end{itemize}
+
+\subsection{Cammini}
+La lunghezza del cammino è il numero di archi attraversati.
+
+\begin{center}
+\includegraphics[width=10cm]{images/cammini.png}
+\end{center}
+
+Un cammino si dice \textbf{semplice} se tutti i suoi vertici sono
+\textbf{distinti} (compaiono una sola volta nella sequenza).
+
+\subsection{Grafi connessi}
+Se G è un grafo \textbf{non orientato}  , diciamo che $G$ è
+\textbf{connesso} se esiste un cammino da ogni vertice ad
+ogni altro vertice. 
+
+\begin{center}
+\includegraphics[width=10cm]{images/grafoConnesso.png}
+\end{center}
+\subsubsection{Grafo fortemente connesso}
+Se G è un grafo \textbf{orientato}, diciamo che $G$ è \textbf{fortemente
+connesso} se esiste un cammino da ogni vertice ad
+ogni altro vertice.
+
+\begin{center}
+\includegraphics[width=6cm]{images/grafoFortementeConnesso.png}
+\end{center}
+
+\subsubsection{Grafo debolmente connesso}
+
+Se G è un grafo \textbf{orientato} che non è fortemente
+connesso, ma la sua versione non orientata è
+connessa, diciamo che G è \textbf{debolmente connesso}.
+
+\begin{center}
+\includegraphics[width=10cm]{images/grafoDebolmenteConnesso.png}
+\end{center}
+
+\subsection{Grafi aciclici}
+Un grafo senza cicli semplici è detto \textbf{aciclico}.
+Un grafo orientato aciclico è chiamato \textbf{DAG} (Directed Acyclic Graph).
+\begin{center}
+\includegraphics[width=7cm]{images/grafoAciclico.png}
+\end{center}
+
+\subsection{Grafo completo}
+Un \textbf{grafo non orientato completo} è un grafo non
+orientato che ha un arco tra ogni coppia di vertici.
+
+\begin{center}
+\includegraphics[width=8cm]{images/grafoCompleto.png}
+\end{center}
+
+\subsection{Alberi}
+
+ Un \textbf{albero libero} è un grafo non orientato connesso,
+aciclico. Se un vertice è detto radice, otteniamo un \textbf{albero
+radicato}
+
+\begin{center}
+\includegraphics[width=8    cm]{images/albero.png}
+\end{center}
+
+\section{Algoritmi di Visita di grafi}
+\begin{itemize}
+    \item \textbf{Visita in ampiezza} (breadth-first search)
+    \begin{itemize}
+        \item Visita i nodi “espandendo” la frontiera fra nodi scoperti / da
+scoprire
+\item Es: Cammini di lunghezza minima da singola sorgente
+    \end{itemize}
+    \item \textbf{Visita in profondità} (depth-first search)
+    \begin{itemize}
+        \item Visita i nodi andando il “più lontano possibile” nel grafo
+        \item Es: Componenti fortemente connesse, ordinamento
+topologico
+    \end{itemize}
+\end{itemize}
 
 
 \end{document}

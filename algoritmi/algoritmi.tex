@@ -1075,6 +1075,107 @@ Algoritmo:
     \includegraphics[width=5cm]{images/esempioOrdinamento.png}
 \end{center}
 
+\subsection{Collegare elementi minimizzando vincoli}
+Minimizzare la quantità di filo elettrico per collegare fra loro i
+diversi componenti.
+\begin{itemize}
+    \item albero di copertura (di peso) minimo.
+    \item albero di connessione (di peso) minimo.
+    \item minimum spanning tree.
+\end{itemize}
+
+\subsubsection{Albero di copertura (spanning tree)}
+Dato un grafo $G = (V, E)$ non orientato e connesso, un
+albero di copertura di $G$ è un sottografo $T = (V, E_T
+)$ tale che:
+\begin{itemize}
+    \item  T è un albero
+    \item $E_T \subseteq E$
+    \item $T$ contiene tutti i nodi di $G$
+\end{itemize}
+
+\begin{center}
+    \includegraphics[width=5cm]{images/alberoCopertura.png}
+\end{center}
+Il \textbf{Minimum Spanning Tree} non è necessariamente unico.
+
+\subsection{Algoritmo generico}
+ \begin{itemize}
+ \item \textbf{Vediamo:}
+     \begin{itemize}
+         \item  Un algoritmo \textbf{greedy} generico.
+         \item Due istanze di questo algoritmo: \textbf{Kruskal} e \textbf{Prim}
+     \end{itemize}
+     \item L'idea è di \textbf{accrescere} un sottoinsieme T di archi in
+        modo tale che venga rispettata la seguente condizione:
+        \begin{itemize}
+            \item T è un sottoinsieme di qualche albero di copertura minimo
+        \end{itemize}
+        \item  Un arco ${u, v}$ è detto \textbf{sicuro} per T se $T \cup \{u, v\}$ è ancora un sottoinsieme di qualche MST
+  \end{itemize}
+
+\begin{center}
+    \includegraphics[width=5cm]{images/algoritmoCopertura.png}
+\end{center}
+\begin{itemize}
+    \item Archi blu
+    \begin{itemize}
+        \item sono gli archi che fanno parte del MST.
+    \end{itemize}
+    \item Archi rossi
+    \begin{itemize}
+        \item sono gli archi che non fanno parte del MST
+    \end{itemize}
+\end{itemize}
+
+Per caratterizzare gli archi sicuri dobbiamo introdurre
+alcune definizioni:
+\begin{itemize}
+    \item Un \textbf{taglio} $(S, V - S)$ di un grafo non orientato $G = (V, E)$ è una partizione di $V$ in due sottoinsiemi disgiunti
+    \item Un arco ${u, v}$ \textbf{attraversa il taglio} se $u \in S e v ∈ V - S$
+    \item Un taglio \textbf{rispetta} un insieme di archi T se nessun arco di T
+    attraversa il taglio.
+    \item Un arco che attraversa un taglio è \textbf{leggero} se il suo peso è minimo fra i pesi degli archi che attraversano un taglio.
+\end{itemize}
+
+\begin{enumerate}
+    \item \textbf{Regola del taglio}
+    \begin{itemize}
+        \item Scegli un taglio in G che \textbf{non contenga archi blu}. Tra tutti gli archi non colorati che attraversano il taglio seleziona un arco di costo minimo e coloralo di blu
+    \end{itemize}
+    \item \textbf{Regola del ciclo}
+    \begin{itemize}
+        \item Scegli un ciclo semplice in G che \textbf{non contenga archi rossi.} Tra tutti gli archi non colorati del ciclo, seleziona un arco di costo massimo e coloralo di rosso
+    \end{itemize}
+    \item \textbf{Metodo greedy}
+    \begin{itemize}
+        \item Costruisce un MST applicando, ad ogni passo, una delle
+        due regole precedenti (una qualunque, purché si possa usare)
+    \end{itemize}
+\end{enumerate}
+
+\begin{center}
+    \includegraphics[width=5cm]{images/esempioCopertura.png}
+\end{center}
+
+
+\subsubsection{Algoritmo di Kruskal}
+\begin{itemize}
+    \item Ingrandire sottoinsiemi disgiunti di un albero di copertura
+    minimo connettendoli fra di loro fino ad avere l’albero finale
+    \begin{itemize}
+        \item Inizialmente la \textbf{foresta di copertura} è composta da n alberi, uno per ciascun nodo, e nessun arco.
+    \end{itemize}
+    \item Si considerano gli archi in ordine non decrescente di peso
+    \item L’algoritmo è greedy perché ad ogni passo si aggiunge alla
+    foresta un arco con il peso minimo
+\end{itemize}
+
+\begin{center}
+    \includegraphics[width=5cm]{images/kruskal.png}
+\end{center}
+\textbf{Costo computazionale:}
+$$O(m \hspace{0.1cm}log\hspace{0.1cm} n)$$
 
 
 \end{document}

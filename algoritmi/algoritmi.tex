@@ -1115,14 +1115,14 @@ Il \textbf{Minimum Spanning Tree} non è necessariamente unico.
   \end{itemize}
 
 \begin{center}
-    \includegraphics[width=5cm]{images/algoritmoCopertura.png}
+    \includegraphics[width=7cm]{images/algoritmoCopertura.png}
 \end{center}
 \begin{itemize}
-    \item Archi blu
+    \item \textbf{Archi blu}
     \begin{itemize}
         \item sono gli archi che fanno parte del MST.
     \end{itemize}
-    \item Archi rossi
+    \item \textbf{Archi rossi}
     \begin{itemize}
         \item sono gli archi che non fanno parte del MST
     \end{itemize}
@@ -1132,7 +1132,7 @@ Per caratterizzare gli archi sicuri dobbiamo introdurre
 alcune definizioni:
 \begin{itemize}
     \item Un \textbf{taglio} $(S, V - S)$ di un grafo non orientato $G = (V, E)$ è una partizione di $V$ in due sottoinsiemi disgiunti
-    \item Un arco ${u, v}$ \textbf{attraversa il taglio} se $u \in S e v ∈ V - S$
+    \item Un arco ${u, v}$ \textbf{attraversa il taglio} se $u \in S e v \in V - S$
     \item Un taglio \textbf{rispetta} un insieme di archi T se nessun arco di T
     attraversa il taglio.
     \item Un arco che attraversa un taglio è \textbf{leggero} se il suo peso è minimo fra i pesi degli archi che attraversano un taglio.
@@ -1145,7 +1145,7 @@ alcune definizioni:
     \end{itemize}
     \item \textbf{Regola del ciclo}
     \begin{itemize}
-        \item Scegli un ciclo semplice in G che \textbf{non contenga archi rossi.} Tra tutti gli archi non colorati del ciclo, seleziona un arco di costo massimo e coloralo di rosso
+        \item Scegli un ciclo semplice in $G$ che \textbf{non contenga archi rossi.} Tra tutti gli archi non colorati del ciclo, seleziona un arco di costo massimo e coloralo di rosso
     \end{itemize}
     \item \textbf{Metodo greedy}
     \begin{itemize}
@@ -1155,7 +1155,7 @@ alcune definizioni:
 \end{enumerate}
 
 \begin{center}
-    \includegraphics[width=5cm]{images/esempioCopertura.png}
+    \includegraphics[width=7cm]{images/esempioCopertura.png}
 \end{center}
 
 
@@ -1172,10 +1172,30 @@ alcune definizioni:
 \end{itemize}
 
 \begin{center}
-    \includegraphics[width=5cm]{images/kruskal.png}
+    \includegraphics[width=7cm]{images/kruskal.png}
 \end{center}
-\textbf{Costo computazionale:}
+\textbf{Costo computazionale:}\\
+$n$ = \textbf{vertici}\\
+$m$ = \textbf{numero archi}
 $$O(m \hspace{0.1cm}log\hspace{0.1cm} n)$$
+
+\subsection{Algoritmo di Prim}
+L’algoritmo di \textbf{Prim} procede mantenendo in un singolo albero $T$ che viene fatto via via “crescere”.
+\begin{itemize}
+    \item L’albero parte da un nodo arbitrario \textbf{r} (la \textbf{radice}) e cresce fino a quando ricopre tutti i vertici.
+    \item Ad ogni passo viene aggiunto l'arco di peso minimo che
+    collega un nodo già raggiunto dell'albero con uno non ancora raggiunto
+\end{itemize}
+
+\begin{center}
+    \includegraphics[width=7cm]{images/prim.png}
+\end{center}
+\textbf{Costo computazionale:}\\
+$n$ = \textbf{vertici}\\
+$m$ = \textbf{numero archi}
+$$O(m \hspace{0.1cm}log\hspace{0.1cm} n)$$
+
+
 
 
 \end{document}

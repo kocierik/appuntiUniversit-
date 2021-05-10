@@ -1195,7 +1195,46 @@ $n$ = \textbf{vertici}\\
 $m$ = \textbf{numero archi}
 $$O(m \hspace{0.1cm}log\hspace{0.1cm} n)$$
 
+\section{Cammini minimi}
+Consideriamo un grafo orientato $G = (V,E)$ in cui ad ogni arco $(x, y) \in E$ sia associato un costo $w(x, y)$.\\
+Data una coppia di nodi $v_0$ e $v_k$ , vogliamo trovare (se esiste) un cammino $\pi v_0_v_k*$  di costo minimo tra tutti i cammini che vanno da $v_0 a v_k$
 
+\textbf{Problemi simili da risolvere:}\\
+\begin{enumerate}
+    \item \textbf{Cammino di costo minimo fra una singola coppia di nodi} $u$ e $v$
+    \begin{itemize}
+        \item Determinare, se esiste, un cammino di costo minimo $\pi_u_v*$ da $u$ verso $v$.
+    \end{itemize}
+    \item \textbf{Single-source shortest path}
+    \begin{itemize}
+        \item Determinare cammini di costo minimo da un nodo sorgente $s$ a tutti i nodi raggiungibili da $s$.
+    \end{itemize}
+    \item \textbf{All-pairs shortest paths}
+    \begin{itemize}
+        \item Determinare cammini di costo minimo tra ogni coppia di nodi $u, v$
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Proprietà (sottostruttura ottima)}
+Sia $G = (V, E)$ un grafo orientato con funzione costo $w$; allora ogni sotto-cammino di un cammino di costo minimo in $G$ è a sua volta un cammino di costo minimo.
+
+\subsection{Condizioni di Bellman Ford}
+\begin{itemize}
+    \item Per ogni arco $(u, v)$ e per ogni vertice $s$, vale la seguente disuguaglianza
+    $$d_s_v \leq d_s_u+w(u,v) $$
+\end{itemize}
+Dalla condizione di \textbf{Bellman} si può dedurre che l'arco $(u, v)$ fa parte di un cammino di \textbf{costo minimo} $\pi_s_v*$ se e solo se:
+    $$d_s_v = d_s_u+w(u,v) $$
+
+\begin{itemize}
+    \item Supponiamo di mantenere una stima $D_s_v \leq d_s_v$ della lunghezza del cammino di costo minimo tra $s$ e $v$.
+    \item Effettuiamo dei passi di “rilassamento”, riducendo progressivamente la stima finché si ha  $D_ s_v = d_s_v$.
+\end{itemize}
+$$\texttt{if($D_s_u+w(u,v)< D_s_v)$} \textbf{then} D_s_v \xleftarrow{}D_s_u+w(u,v) $$
+
+\begin{center}
+    \includegraphics[width=7cm]{images/Bellman.png}
+\end{center}
 
 
 \end{document}

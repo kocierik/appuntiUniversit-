@@ -1235,6 +1235,36 @@ $$\texttt{if($D_s_u+w(u,v)< D_s_v)$} \textbf{then} D_s_v \xleftarrow{}D_s_u+w(u,
 \begin{center}
     \includegraphics[width=7cm]{images/Bellman.png}
 \end{center}
+\textbf{Costo computazionale:}\\
+$n$ = numero archi \\
+$m$ = numero vertici
+$$O(nm)$$
+
+\newpage
+
+\subsection{Dijkstra}
+Determina i cammini di \textbf{costo minimo} da singola sorgente nel caso in cui tutti gli archi abbiano costo $\geq 0$.\\
+\begin{itemize}
+    \item Sia $G = (V, E)$ un grafo orientato con funzione costo $w$.
+    \begin{itemize}
+        \item I costi degli archi devono essere $\geq 0$. 
+    \end{itemize}
+    \item Sia $T$ una parte dell'albero dei cammini di costo minimo radicato in $s$
+    \begin{itemize}
+        \item $T$ rappresenta porzioni di cammini di costo minimo che partono da $s$.
+    \end{itemize}
+    \item Allora l'arco $(u, v)$ con $u \in V(T)$ e $v \not\in V(T)$ che
+    minimizza la quantità $d_s_u + w(u, v)$ appartiene ad un cammino minimo da $s$ a $v$.
+\end{itemize}
+
+\begin{center}
+    \includegraphics[width=7cm]{images/Bellman.png}
+\end{center}
+\subsection{Algoritmo Dijkstra}
+\begin{center}
+    \includegraphics[width=9cm]{images/algoritmoDijkstra.png}
+\end{center}
+
 
 
 \end{document}

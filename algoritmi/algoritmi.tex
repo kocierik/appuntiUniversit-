@@ -1265,6 +1265,28 @@ Determina i cammini di \textbf{costo minimo} da singola sorgente nel caso in cui
     \includegraphics[width=9cm]{images/algoritmoDijkstra.png}
 \end{center}
 
+ \subsubsection{Costo computazionale:}
+ \begin{itemize}
+     \item L'inizializzazione ha costo $O(n)$.
+     \item Le operazioni $find()$ e $deleteMin()$ hanno costo $O(log n)$ e sono eseguite al più $n$ volte.
+        \begin{itemize}
+         \item Una volta che un nodo è stato estratto dalla coda di priorità
+        non verrà più reinserito.
+     \end{itemize}
+     \item Le operazioni $insert()$ e $decreaseKey()$ hanno costo
+     $O(log n)$ e sono eseguite al più $m $volte.
+     \begin{itemize}
+         \item Una volta per ogni arco.
+     \end{itemize}
+     \item Totale: $O( (n+m)\hspace{0.1cm} log \hspace{0.1cm} n) = O(m \hspace{0.1cm} log \hspace{0.1cm} n)$ se tutti i nodi sono raggiungibili dalla sorgente.
+ \end{itemize}
 
+\textbf{Costo computazionale:}\\
+$n$ = numero archi \\
+$m$ = numero vertici
+$$O(m \hspace{0.1cm} log \hspace{0.1cm}n)$$
+
+
+ 
 
 \end{document}

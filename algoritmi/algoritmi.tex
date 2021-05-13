@@ -1286,7 +1286,39 @@ $n$ = numero archi \\
 $m$ = numero vertici
 $$O(m \hspace{0.1cm} log \hspace{0.1cm}n)$$
 
+\subsection{Algoritmo di Floyd e Warshall}
 
+\begin{itemize}
+    \item Si può applicare a grafi orientati con costi arbitrari (anche negativi), purché non ci siano cicli negativi
+    \item Sia $V = \{1, 2, … n\}$
+    \item Sia $D_x_y^k$ la distanza minima dal nodo $x$ al nodo $y$, nell'ipotesi in cui gli eventuali nodi intermedi possano appartenere esclusivamente all'insieme $\{1, … k\}$
+    \item La soluzione al nostro problema è $D_x_y^n$ per ogni coppia di nodi $x$ e $y$.
+\end{itemize}
  
+ $$D_x_y^k=min\{ D_x_y^k^-^1 , D_x_k^k^-^1 + D_k_y^k^-^1 \}$$
+
+\newpage
+
+\textbf{Esempio:}
+\begin{center}
+    \includegraphics[width=9cm]{images/esempioS.png}
+\end{center}
+\textbf{Costo computazionale:}\\
+$$O(n^3)$$
+
+\subsection{Algoritmo di FloydWarshall}
+
+\begin{center}
+    \includegraphics[width=12cm]{images/floyd.png}
+\end{center}
+
+\subsection{Ricostruzione dei cammini}
+\begin{itemize}
+        \item Per ricostruire i cammini di costo minimo possiamo usare una matrice dei successori $next[x,y]$ di $n * n$ elementi.
+    \begin{itemize}
+    \item next[x,y] è l'indice del secondo nodo attraversato dal cammino di costo minimo che va da x a y (il primo nodo di tale cammino è x, l'ultimo è y).
+    \end{itemize}
+\end{itemize}
+
 
 \end{document}

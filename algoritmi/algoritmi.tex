@@ -1320,5 +1320,45 @@ $$O(n^3)$$
     \end{itemize}
 \end{itemize}
 
+Se non sono presenti pesi negativi utilizzare \textbf{Dijkstra}, altrimenti utilizzare \textbf{Bellman Ford}.
+
+
+\subsection{Teoria della NP-completezza}
+\textbf{P} indica la complessità polinomiale.\\
+\begin{itemize}
+    \item Consideriamo un problema Q come una relazione:
+    $$Q \subseteq< I x S$$
+    \begin{itemize}
+        \item I è l'insieme delle istanze di ingresso.
+        \item S è l'insieme delle soluzioni.
+    \end{itemize}
+    \item Possiamo immaginare $Q$ come un predicato che, dato
+    in ingresso una istanza di input $x \in I$ e una soluzione
+    $s \in S$, restituisce:
+    \begin{itemize}
+        \item 1 se $(x,s) \in Q$ ($s$ è soluzione del problema $Q$ sull'istanza $x$)
+        \item 0 altrimenti ($s$ non è soluzione del problema $Q$ sull'istanza $x$)
+    \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+    \item Data una funzione $f(n)$, chiamiamo $TIME(f(n))$
+    (risp. $SPACE(f(n))$ ) l'insieme di tutti i problemi
+    decisionali che possono essere risolti in tempo
+    (risp. in spazio) $O(f(n))$.
+    \item \textbf{TIME} indica un insieme di problemi
+\end{itemize}
+
+\newpage
+
+\subsubsection{Classi di complessità}
+\begin{itemize}
+    \item La \textbf{classe P} è la classe dei problemi risolvibili in tempo polinomiale nella dimensione n dell'istanza di ingresso:
+    $$ P = \cup^\infty_c_=_0 \hspace{0.1cm} TIME(n^c)$$
+    \item La classe PSPACE è la classe dei problemi risolvibili in spazio polinomiale nella dimensione n dell'istanza di ingresso:
+    $$ PSPACE = \cup^\infty_c_=_0 \hspace{0.1cm} SPACE(n^c)$$
+\end{itemize}
+
+
 
 \end{document}

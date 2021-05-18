@@ -8,19 +8,19 @@
 \title{Algoritmi e strutture dati}
 \author{Koci Erik}
 \maketitle
-\section{Complessit√† algoritmi}
+\section{Complessità algoritmi}
 \begin{enumerate}
     \item \textbf{Costo:} si riferisce al costo di un singolo algoritmo
-\item \textbf{Complessit√†:} si riferisce a pi√π risoluzioni di un algoritmo 
+\item \textbf{Complessità:} si riferisce a più risoluzioni di un algoritmo
 \end{enumerate}
 \includegraphics{universe}
-il costo di un blocco \textbf{if-then-else} √®  $O(max\{f(n),g(n),h(n)\})$ cio√® \textbf{O(1)}.
+il costo di un blocco \textbf{if-then-else} è  $O(max\{f(n),g(n),h(n)\})$ cioè \textbf{O(1)}.
 
 \subsection{Ordini di grandezza}
 \begin{enumerate}
     \item $\Theta(f(n))$ se \textbf{cresce tanto quanto f}
-    \item $O(f(n))$ \textbf{se la crescita √® minore o uguale a f}
-    \item $\Omega(f(n))$ \textbf{se la crescita √® maggiore o uguale a f}
+    \item $O(f(n))$ \textbf{se la crescita è minore o uguale a f}
+    \item $\Omega(f(n))$ \textbf{se la crescita è maggiore o uguale a f}
 \end{enumerate}
 \subsection{Esercizi}
 \begin{itemize}
@@ -43,25 +43,25 @@ il costo di un blocco \textbf{if-then-else} √®  $O(max\{f(n),g(n),h(n)\})$ cio√®
     \item \textbf{Caso medio} $$T\textsc{avg}(n) = \sum\limits_{} T(I)P(I)$$
 \end{enumerate}
 \subsection{Algoritmi ordinamento}
-\textbf{Selection sort:} scorre tutti gli elementi degli array e si cerca il valore pi√π piccolo scambiando i due valori. Il costo √® lineare con il numero di elementi da considerare:
+\textbf{Selection sort:} scorre tutti gli elementi degli array e si cerca il valore più piccolo scambiando i due valori. Il costo è lineare con il numero di elementi da considerare:
 $$T(n) = \Theta (n^2)$$
-\textbf{il costo √® $\Theta(n^2)$} perch√® √® presente una funzione min che ogni volta controlla se il numero √® il minore.
+\textbf{il costo è $\Theta(n^2)$} perchè è presente una funzione min che ogni volta controlla se il numero è il minore.
 Le chiamate a \textbf{min} contribuiscono a $n^2$ mentre il resto combacia con $n$
-cio√® $n^2+n$;\,\,\,\,n viene assorbito. \\
+cioè $n^2+n$;\,\,\,\,n viene assorbito. \\
 
-\textbf{Ricerca binaria (ricorsiva):} per utilizzare questo algoritmo devo avere un array ordinato. Cerco il valore andando a verificare sempre nella met√† dove mi aspetto che sia presente.
+\textbf{Ricerca binaria (ricorsiva):} per utilizzare questo algoritmo devo avere un array ordinato. Cerco il valore andando a verificare sempre nella metà dove mi aspetto che sia presente.
 $$T(n) = 1 \,\,\,se\,\, n=0$$
-$$T(n) = T(n/2)+1 $$ 
+$$T(n) = T(n/2)+1 $$
 \textbf{equazione di ricorrenza:} ci aiuta a calcolare il costo analizzando una singola ricorsione. \\\\
-\subsection{metodo dell'iterazione:} consiste nello sviluppare l'equazione di ricorrenza, per intuirne la soluzione. 
+\subsection{metodo dell'iterazione:} consiste nello sviluppare l'equazione di ricorrenza, per intuirne la soluzione.
 
 $$T(n) = c_1 + c_2*log (n) = \Theta(log (n))$$
-E' presente il \textbf{logaritmo} perch√® ogni volta devo \textbf{dimezzare} il tutto in base al numero di elementi. $c_1$ perch√® devo eseguire le istruzioni la prima volta.\\
+E' presente il \textbf{logaritmo} perchè ogni volta devo \textbf{dimezzare} il tutto in base al numero di elementi. $c_1$ perchè devo eseguire le istruzioni la prima volta.\\
 
 dimostrare che $T(n) = O(n)$
 $$T(n = 1) \,\, n==1$$
 $$T(T([n/2])+n \,\,\, n>1$$
-\subsection{Metodo della sostituzione:} consiste facendo una dimostrazione per induzione. quindi parto dal valore base che √® n (esempio 1) e dimostriamo che vale anche per un $n$ pi√π grande. \\\\
+\subsection{Metodo della sostituzione:} consiste facendo una dimostrazione per induzione. quindi parto dal valore base che è n (esempio 1) e dimostriamo che vale anche per un $n$ più grande. \\\\
 \textbf{caso base:} $$T(1) = 1 \leq c x 1$$ \\
 \textbf{induzione:}
 $$T(n) = T([n/2])+n$$ $$ \leq c[n/2]+n \,\,\,\,\, (ipotesi\,induttiva)$$
@@ -85,16 +85,16 @@ L'equazione di ricorrenza ha la seguente soluzione:
 \end{enumerate}
 
 
-Il teorema fondamentale  \textbf{non} si pu√≤ applicare ad algoritmi ricorsivi che non effettuano \textbf{partizioni bilanciate}.\\
-ad esempio non pu√≤ essere applicato nella risoluzione di fibonacci ricorsivo.\\
+Il teorema fondamentale  \textbf{non} si può applicare ad algoritmi ricorsivi che non effettuano \textbf{partizioni bilanciate}.\\
+ad esempio non può essere applicato nella risoluzione di fibonacci ricorsivo.\\
 
 Esempio: \\
 $$T(n) = 1 \, n<=1$$
-$$T(n‚àí1)+T(n ‚àí 2)+1 \, n > 2$$
+$$T(n?1)+T(n ? 2)+1 \, n > 2$$
 Se le \textbf{partizioni sono bilanciate} conviene utilizzare il   \textbf{Master Theorem}.\\\\
-\textbf{partizione bilanciate:} quando facciamo chiamate ricorsive prendo il mio input suddividendolo in parti n/b. Fibonacci non √® bilancianto perche abbiamo due chiamate ricorsive diverse. \\
+\textbf{partizione bilanciate:} quando facciamo chiamate ricorsive prendo il mio input suddividendolo in parti n/b. Fibonacci non è bilancianto perche abbiamo due chiamate ricorsive diverse. \\
 
-\textbf{L‚Äôanalisi ammortizzata:} studia il costo medio di una sequenza di operazioni.\\
+\textbf{L’analisi ammortizzata:} studia il costo medio di una sequenza di operazioni.\\
 
 Sia  \textbf{T(n, k)} il tempo totale richiesto da un algoritmo, nel caso pessimo, per effettuare k operazioni su istanze di lunghezza n.
 Definiamo il \textbf{costo ammortizzato} su una sequenza di k operazioni come:
@@ -104,32 +104,32 @@ $$T_\alpha(n)=\frac{T(n,k)}{k}$$
 \subsection{Algoritmi di visita degli alberi}
 Esistono due tipologie di visita:
 \begin{itemize}
-    \item In profondit√† (pre-ordine, in-rodine, post-ordine)
+    \item In profondità (pre-ordine, in-rodine, post-ordine)
     \item In ampiezza
 \end{itemize}
 Nella visita \textbf{pre-ordine} si parte visitando il nodo della radice per poi passare a visitare tutto il nodo sinistro, risalendo poi andando verso destra.\\\\
-Nella visita \textbf{in-ordine} si parte a visitare dal ramo pi√π in basso a sinistra risalendo per poi andare verso destra. \\\\
-Nella visita \textbf{post-ordine} vengono prima visitati i nodi pi√π in profondit√† partendo sempre da sinistra verso destra per poi risalire.\\\\
+Nella visita \textbf{in-ordine} si parte a visitare dal ramo più in basso a sinistra risalendo per poi andare verso destra. \\\\
+Nella visita \textbf{post-ordine} vengono prima visitati i nodi più in profondità partendo sempre da sinistra verso destra per poi risalire.\\\\
 Nella visita per \textbf{ampiezza} si analizza l'albero a livelli, partendo dalla radice.
 
 \subsection{Alberi AVL}
-Un albero $AVL$ √® un albero di ricerca (quasi) bilanciato. Questo albero supporta le operazioni di $insert(), delete(), search()$ con costo $O(log n)$ nel \textbf{caso pessimo}.
+Un albero $AVL$ è un albero di ricerca (quasi) bilanciato. Questo albero supporta le operazioni di $insert(), delete(), search()$ con costo $O(log n)$ nel \textbf{caso pessimo}.
 
 \subsubsection{Fattore di bilanciamento}
-Il fattore di bilanciamento $\beta(v)$ di un novo $v$ √® dato dalla differenza tra l'altezza del sottoalbero sinistro e del sottoalbero destro di v:
+Il fattore di bilanciamento $\beta(v)$ di un novo $v$ è dato dalla differenza tra l'altezza del sottoalbero sinistro e del sottoalbero destro di v:
 $$\beta(v) = altezza(v.left)-altezza(v.right)$$
 \subsubsection{Bilanciamento in altezza}
-Un albero si dice \textbf{bilanciato in altezza} se le altezze dei sottoalberi sinitro e destro di ogni nodo differiscono al pi√π di uno.
+Un albero si dice \textbf{bilanciato in altezza} se le altezze dei sottoalberi sinitro e destro di ogni nodo differiscono al più di uno.
 $$\beta\leq1$$
-\textbf{Definizione:} un albero $AVL$ √® un $ABR$ bilanciato in altezza.
-\subsubsection{Inserimento e rimozione} 
+\textbf{Definizione:} un albero $AVL$ è un $ABR$ bilanciato in altezza.
+\subsubsection{Inserimento e rimozione}
 Inserimenti e rimozioni richiedono di essere modificati per mantenere il bilanciamento dell'albero. \\
-L'operazione fondamentale per ribilanciare l'albero √® la \textbf{rotazione semplice}.\\
+L'operazione fondamentale per ribilanciare l'albero è la \textbf{rotazione semplice}.\\
 \subsubsection{Rotazione a sinistra}
-Per effettuare questa rotazione prendo il nodo problematico e effettuo una rotazione scambiandolo con il successivo ed il nodo scambiato diventer√† figlio destro mentre il figlio del nodo precendete diventer√† figlio sinistro.
+Per effettuare questa rotazione prendo il nodo problematico e effettuo una rotazione scambiandolo con il successivo ed il nodo scambiato diventerà figlio destro mentre il figlio del nodo precendete diventerà figlio sinistro.
 
 \subsection{Alberi 2-3}
-Un albero 2-3 √® un albero in cui:
+Un albero 2-3 è un albero in cui:
 \begin{itemize}
     \item Tutti i percorsi radice-foglia hanno la stessa lunghezza
     \item Le foglie contengono le chiavi (e i dati da memorizzare) e sono ordinate da sinistra verso destra in ordine di chiave crescente.
@@ -152,14 +152,14 @@ Ricapitolando, per realizzare una tabella hash efficiente abbiamo bisogno di:
 \begin{itemize}
     \item Un vettore
     \item Una funzione has calcolabile velocemente e che garantisca una buona distribuzione delle chiavi nel vettore
-    \item Un meccanisco per gestire le collisioni 
+    \item Un meccanisco per gestire le collisioni
 \end{itemize}
 \subsubsection{Problema delle collisioni}
-Una funzione hash $h$ si dice \textbf{perfetta} se √® iniettiva:
+Una funzione hash $h$ si dice \textbf{perfetta} se è iniettiva:
 $$\forall u, \in U: u \neq v \xrightarrow{} h(u) \neq h(v)$$
-Se le collisioni sono inevitabili, √® necessario trovare un metodo che le minimizzi, distribuendo \textbf{uniformemente} le chaivi negli indici della tabella hash.
+Se le collisioni sono inevitabili, è necessario trovare un metodo che le minimizzi, distribuendo \textbf{uniformemente} le chaivi negli indici della tabella hash.
 \subsubsection{Funzioni hash}
-E' necessario fare una premessa; nelle funzioni hash √® \textbf{sempre possibile} trasformare una chiave complessa in un numero, (conversione in binario).
+E' necessario fare una premessa; nelle funzioni hash è \textbf{sempre possibile} trasformare una chiave complessa in un numero, (conversione in binario).
 \subsubsection{Metodo dell'estrazione}
 Le caratteristiche di questo metodo sono:
 \begin{itemize}
@@ -169,11 +169,11 @@ Le caratteristiche di questo metodo sono:
 \end{itemize}
 \textbf{esempio:} Verranno prese le cifre centrali 101000
 \begin{center}
- bin(‚Äúbeer‚Äù) = 000010 000101 000101 010010 
+ bin(“beer”) = 000010 000101 000101 010010
 \end{center}
 \begin{itemize}
     \item \textbf{Vantaggi:} molto veloce da calcolare
-    \item \textbf{Svantaggi} rischio collisioni pi√π alto di altri metodi
+    \item \textbf{Svantaggi} rischio collisioni più alto di altri metodi
 \end{itemize}
 
 \subsubsection{Metodo della divisione}
@@ -195,15 +195,15 @@ Basato sulla moltiplicazione e il resto del numero
 $$m = , k = 3, A = 0.8 \xrightarrow{} h(k) = 2$$
 $$m = 1000,k = 123, A \approx 0.6180339887... \xrightarrow{} h(k) = 18$$
 \begin{itemize}
-    \item \textbf{Svantaggi:} lento (pi√π lento del metodo di divisione)
-    \item \textbf{Vantaggi} Il valore di $m$ non √® critico
+    \item \textbf{Svantaggi:} lento (più lento del metodo di divisione)
+    \item \textbf{Vantaggi} Il valore di $m$ non è critico
     \item \textbf{Come scegliere A?} $A \approx (\sqrt{5}-1)/2 = 0.61803...$ \textbf{(Knuth)}
 \end{itemize}
 \subsubsection{Metodo della codifica algebrica}
 Metodo utilizzando dal compilatore java basato su espressioni algebriche:
 $$h(k) = (k_n x^n + k_n_-_1 x^n^-^1 + ... + k_1 x + k_0) mod \hspace{0.1cm}m$$
 $$k = k_n k_n_-_1 ... k_1k_0$$
-Dove $k_0, k_1...$ possono essere, ad esempio, i bit della \textbf{codifica binaria} di $k$, oppure i \textbf{codici ascii} dei singoli caratteri di $k$.\\ $x$ √® un valore \textbf{costante}.
+Dove $k_0, k_1...$ possono essere, ad esempio, i bit della \textbf{codifica binaria} di $k$, oppure i \textbf{codici ascii} dei singoli caratteri di $k$.\\ $x$ è un valore \textbf{costante}.
 \begin{itemize}
     \item \textbf{Vantaggi:} dipende da tutti i bit/caratteri della chiave
     \item \textbf{Svantaggi:} $n$ addizioni e $n*(n-1)/2$ prodotti
@@ -218,24 +218,24 @@ Per risolvere questo problema la  \textbf{complessita computazionale potrebbe au
 \subsubsection{concatenamento}
      Nella tecnica di  \textbf{concatenameto} gli elementi con lo stesso valore hash  $h$ vengono memorizzati in una lista concatenata (linked list).\\
 
-Il \textbf{fattore di carico} √® dato dal rapporto tra numero di elementi memorizzati e dimensioni della tabella. \\\\
-La \textbf{complessit√†} del concatenamento √® la seguente:
+Il \textbf{fattore di carico} è dato dal rapporto tra numero di elementi memorizzati e dimensioni della tabella. \\\\
+La \textbf{complessità} del concatenamento è la seguente:
 \begin{itemize}
     \item insert: $\Theta(1)$
     \item search: $\Theta(n)$
     \item delete: $\Theta(n)$
 \end{itemize}
 \subsubsection{indirizzamento aperto}
-L'idea √® quella di memorizzare tutte le chiavi nella tabella stessa, ed ogni slot contiene una chiave oppure $null$. \\\\
-\textbf{Inserimento:} se lo slot prescelto √® utilizzato, si cerca uno slot alternativo. \\\\
-\textbf{Ricerca:} si cerca nello slot prescelto, epoi negli slot alternativi fino a quando non si trova la chiave oppure $null$.\\\\ 
+L'idea è quella di memorizzare tutte le chiavi nella tabella stessa, ed ogni slot contiene una chiave oppure $null$. \\\\
+\textbf{Inserimento:} se lo slot prescelto è utilizzato, si cerca uno slot alternativo. \\\\
+\textbf{Ricerca:} si cerca nello slot prescelto, epoi negli slot alternativi fino a quando non si trova la chiave oppure $null$.\\\\
 Vengono utilizzati diversi algoritmi di indirizzamento, per esempio i seguenti:\\\\
 \textbf{Ispezione lineare}\\
 Il primo elemento determina l'intera sequenza. In questo modo si ottengono \textbf{lunghe sottosequenze}.
 $$h(k,i) = (h' (k) + 1)$$
 \\
 \textbf{Ispezione quadratica:}\\
-L'ispezione iniziale √® in $h'(k)$, mentre le succesive hanno un offset che dipende da una \textbf{funzione quadratica nel numero di ispezione}.
+L'ispezione iniziale è in $h'(k)$, mentre le succesive hanno un offset che dipende da una \textbf{funzione quadratica nel numero di ispezione}.
 $$h'(k) + c_1i + c_2 i^2$$
 \\
 \textbf{Doppio hashing:}\\
@@ -243,17 +243,17 @@ Formato da \textbf{due funzioni ausiliari} di cui la prima $h_1$ fornisce la pri
 $$h(k,i) = (h_1(k) + i h_2(k))$$
 
 \subsubsection{Conclusioni hash table}
-Usare funzioni hash $h(k)$ che producano valori il pi√π possibile uniformemente distribuiti √® molto importante perch√® altrimenti potremmo arrivare ad una complessit√† computazionale pari a $O(n)$.\\\\
+Usare funzioni hash $h(k)$ che producano valori il più possibile uniformemente distribuiti è molto importante perchè altrimenti potremmo arrivare ad una complessità computazionale pari a $O(n)$.\\\\
 \textbf{Problemi con hashing:}
 \begin{itemize}
     \item Scarsa locality of reference (cache miss)
-    \item In base all'implementazione √® in genere difficile ottenere le chiavi in ordine
-    \item Sebbene il costo medio per operazione sia basso, la singola operazione pu√≤ risultare molto costosa, ad esempio se occorre ridimensionare la tabell ae redistribuire le chiavi.
+    \item In base all'implementazione è in genere difficile ottenere le chiavi in ordine
+    \item Sebbene il costo medio per operazione sia basso, la singola operazione può risultare molto costosa, ad esempio se occorre ridimensionare la tabell ae redistribuire le chiavi.
 \end{itemize}
 \newpage
 \section{Scelta degli algoritmi}
-A seconda delle operazioni da eseguire √® necessario adattare diverse tecniche di implimentazione di un algoritmo.
-\subsubsection{Implementazione su un vettore ordinato} 
+A seconda delle operazioni da eseguire è necessario adattare diverse tecniche di implimentazione di un algoritmo.
+\subsubsection{Implementazione su un vettore ordinato}
 Questo tipo di ricerca ha un costo computazionale basso nel caso in cui volessimo \textbf{ricercare degli elementi}.
 Costi computazionali:
 \begin{itemize}
@@ -298,7 +298,7 @@ Costi computazionali:
 \end{itemize}
 
 \subsubsection{Hash table}
-Implementazione basata su array, dove l'elemento con chiave $k$ √® memorizzato nel $k-esimo$ "slot" dell'array.
+Implementazione basata su array, dove l'elemento con chiave $k$ è memorizzato nel $k-esimo$ "slot" dell'array.
 
 \begin{itemize}
     \item Ricerca caso medio $O(1)$ \hspace{2cm} Ricerca caso pessimo $O(n)$
@@ -322,14 +322,14 @@ L'algoritmo preserva l'ordine con cui elementi con la stessa
 chiave compaiono nell'array originale.
 \subsection{Selection sort}
 Cerca il minimo in $A[k+1..n]$ e spostalo in posizione $k+1$.\\
-La complessita di questo algoritmo √® pari a:
+La complessita di questo algoritmo è pari a:
 $$O(n^2)$$
 \begin{center}
 \includegraphics[width=5cm]{images/selectionSort.png}
 \end{center}
 \subsection{Insertion sort}
 Inserisco l'elemento di posizione k+1 nella \textbf{posizione corretta} all'interno dei primi k elementi ordinati. Al termine del passo k, il vettore ha le prime k componenti  ordinate.\\
-Il costo computazionale di questo algoritmo √®:
+Il costo computazionale di questo algoritmo è:
 $$O(n^2)$$
 \begin{center}
 \includegraphics[width=5cm]{images/insertionSort.png}
@@ -353,8 +353,8 @@ Scegli un elemento x del vettore v, e \textbf{partiziona il vettore in due parti
 Ordina ricorsivamente le due parti.\\
 Restituisci il risultato concatenando le due parti ordinate.
 \subsubsection{Partizionamento}
-Manteniamo due indici, inf e sup, che vengono fatti \textbf{scorrere dalle estremit√†} del vettore verso il centro. Quando entrambi (inf e sup) non possono essere fatti avanzare verso il centro, si \textbf{scambia} $A[inf]$ e $A[sup]$.\\
-Il costo quick sort: Dipende dal partizionamento: 
+Manteniamo due indici, inf e sup, che vengono fatti \textbf{scorrere dalle estremità} del vettore verso il centro. Quando entrambi (inf e sup) non possono essere fatti avanzare verso il centro, si \textbf{scambia} $A[inf]$ e $A[sup]$.\\
+Il costo quick sort: Dipende dal partizionamento:
 \begin{center}
 \textbf{caso peggiore:} $\Theta(n^2)$ \hspace{2cm} \textbf{caso migliore:} $\Theta(n \hspace{0.1cm}log \hspace{0.1cm}n)$
 \end{center}
@@ -376,16 +376,16 @@ $A2[]$ per ottenere l'array $A[]$ ordinato.
 \end{center}
 
 \subsection{Heapsort}
-Funzionamento: 
+Funzionamento:
 \begin{enumerate}
     \item Costruire un \textbf{max-heap} a partire dal vettore A[] originale, mediante l'operazione \textbf{heapify()}
     \item Estrarre il \textbf{massimo} $( findMax() + deleteMax() )$
     \item \textbf{Inserire} il massimo in ultima posizione di A[].
-    \item \textbf{Ripetere} il punto 2. finch√© lo heap diventa vuoto
+    \item \textbf{Ripetere} il punto 2. finché lo heap diventa vuoto
 \end{enumerate}
 \newpage
 \subsubsection{Albero binario perfetto}
-Un albero binario √® \textbf{perfetto} se:
+Un albero binario è \textbf{perfetto} se:
 
 
 \begin{itemize}
@@ -393,24 +393,24 @@ Un albero binario √® \textbf{perfetto} se:
     \item Nodi interni hanno grado 2
 \end{itemize}
  Un albero perfetto ha altezza $h\hspace{0.1cm} \simeq log \hspace{0.1cm} N$  \\
- Il numero di nodi √® $ N = nodi = 2^h^+^1 -1$
- 
+ Il numero di nodi è $ N = nodi = 2^h^+^1 -1$
+
  \subsubsection{Albero binario completo}
- Un albero binario √® \textbf{completo} se:
+ Un albero binario è \textbf{completo} se:
 \begin{itemize}
-    \item Tutte le foglie hanno profondit√† h o h-1
-    \item Tutti i nodi a livello h sono ‚Äúaccatastati‚Äù a
+    \item Tutte le foglie hanno profondità h o h-1
+    \item Tutti i nodi a livello h sono “accatastati” a
     sinistra
-    \item Tutti i nodi interni hanno grado 2, eccetto al pi√π uno
+    \item Tutti i nodi interni hanno grado 2, eccetto al più uno
 \end{itemize}
 \subsubsection{Max-heap}
-Un albero binario completo √® un albero \textbf{max-heap} sse:
+Un albero binario completo è un albero \textbf{max-heap} sse:
 \begin{itemize}
     \item Ad ogni nodo i viene associato un valore $A[i]$
     \item $A[Parent(i)] \geq A[i]$
 \end{itemize}
 \subsubsection{Min-heap}
-Un albero binario completo √® un albero \textbf{min-heap} sse:
+Un albero binario completo è un albero \textbf{min-heap} sse:
 \begin{itemize}
     \item Ad ogni nodo i viene associato un valore $A[i]$
     \item $A[Parent(i)] \leq A[i]$
@@ -418,13 +418,13 @@ Un albero binario completo √® un albero \textbf{min-heap} sse:
 \newpage
 
 \subsection{Operazioni su array heap}
-\subsubsection{findMax()} 
+\subsubsection{findMax()}
 Individua il valore massimo contenuto in uno heap.\\
-Il massimo √® sempre la radice, ossia A[1].\\
+Il massimo è sempre la radice, ossia A[1].\\
 L'operazione ha costo $\Theta(1)$.
 
 \subsubsection{fixHeap()}
-Ripristinare la propriet√† di max-heap.\\
+Ripristinare la proprietà di max-heap.\\
 Supponiamo di rimpiazzare la radice $A[1]$ di un max-heap
 con un valore qualsiasi, vogliamo fare in modo che $A[]$ diventi nuovamente uno heap.
 
@@ -445,10 +445,10 @@ Rimuovi l'elemento massimo da un maxheap $A[]$.
 \section{Tecniche lineari di ordinamento}
 \subsection{Counting Sort}
 I valori di $A[0..n-1]$ appartengono all'intervallo $[0, k-1]$
-(ciascun valore pu√≤ comparire zero o pi√π volte).\\
+(ciascun valore può comparire zero o più volte).\\
 Costruisco un array $Y[0, k-1]$; $Y[i]$ conta il numero di volte in
 cui il valore i compare in $A[]$.\\
-Ricolloco i valori cos√¨ ottenuti in A.\\
+Ricolloco i valori così ottenuti in A.\\
 \textbf{Counting Sort: Costo}
 $$O(max\{n,k\}) = O(n+k) = O(n)$$
 
@@ -472,7 +472,7 @@ $$O(n+k)$$
 \subsection{Radix Sort}
 Supponiamo di voler ordinare n numeri con 4 cifre decimali.\\
 Questo richiederebbe $n+10000$ operazioni; se $n \hspace{0.1cm} log \hspace{0.1cm} n < n+10000$, questo non sarebbe conveniente.\\
-Prima ordino in base alla cifra delle \textbf{unit√†}.\\
+Prima ordino in base alla cifra delle \textbf{unità}.\\
 Poi ordino in base alla cifra delle \textbf{decine}.\\
 Poi ordino in base alla cifra delle \textbf{centinaia}.\\
 
@@ -486,13 +486,13 @@ Poi ordino in base alla cifra delle \textbf{centinaia}.\\
 \section{Selezione del k-esimo}
 Consideriamo il seguente problema:\\
 \textbf{Selezione del k-esimo minimo}: dato un array $A[1..n]$ di valori
-distinti e un valore $1 \leq k \leq n$, trovare l'elemento che √®
+distinti e un valore $1 \leq k \leq n$, trovare l'elemento che è
 maggiore di esattamente $k-1$ elementi.\\
 \textbf{Mediano}: il valore che occuperebbe la posizione $(n/2)$ se
 l'array fosse ordinato.\\
 I \textbf{motori di ricerca} producono molti risultati a fronte di
 una singola query. I risultati vengono mostrati in pagine, in ordine
-decrescente di rilevanza. √à \textbf{inutile ordinare tutti i risultati} in base alla rilevanza.\\
+decrescente di rilevanza. È \textbf{inutile ordinare tutti i risultati} in base alla rilevanza.\\
 Verifichiamo ora i costi computazionali dei singoli casi:\\
 \textbf{Ricerca del minimo:}\\
 $$T(n) = n-1 = \Theta(n)$$
@@ -504,7 +504,7 @@ $$T(n) = \Theta(kn)$$
 $$T(n) = O(n + k\hspace{0.1cm} log\hspace{0.1cm} n) = O(n + (n/2) log \hspace{0.1cm} n) = O(n \hspace{0.1cm} log \hspace{0.1cm} n)$$
 \subsubsection{Adattamento di quicksort al
 problema della selezione:}
-In questo modo divido il mio array in pi√π partizioni, andando a eliminare quelle inutili.
+In questo modo divido il mio array in più partizioni, andando a eliminare quelle inutili.
 \begin{center}
 \includegraphics[width=8cm]{images/partizionamento1.png}
 \includegraphics[width=8cm]{images/partizionamento2.png}
@@ -517,8 +517,8 @@ $$T(n) = T(n-1) + n = \Theta(n^2)$$
 \textbf{Costo nel caso medio:}\\
 $$T(n) \leq 4n$$
 
-\section{Code con priorit√†}
-Le code con priorit√† sono strutture dati che mantengono il minimo (massimo) in un insieme dinamico di chiavi. 
+\section{Code con priorità}
+Le code con priorità sono strutture dati che mantengono il minimo (massimo) in un insieme dinamico di chiavi.
 $$ coda = key | elem $$
 Sono presenti due possibili implementazioni:
 \begin{itemize}
@@ -526,9 +526,9 @@ Sono presenti due possibili implementazioni:
     \item heap binomiali e heap di fibonacci
 \end{itemize}
 \subsubsection{d-heap}
-Un d-heap √® un albero d-ario con le seguenti propriet√†:
+Un d-heap è un albero d-ario con le seguenti proprietà:
 \begin{enumerate}
-    \item Un d-heap di altezza $h$ √® perfetto almeno fino alla profondit√† $h-1$; le foglie al livello $h$ sono accatastate a sinistra.
+    \item Un d-heap di altezza $h$ è perfetto almeno fino alla profondità $h-1$; le foglie al livello $h$ sono accatastate a sinistra.
     \item Ciascun nodo $v$ contiene una $chiave(v)$ e un elemento $elem(v)$. Le chiavi appartengono ad un dominio totalmente ordinato.
     \item Ogni nodo diverso dalla radice ha chiave non inferiore $(\geq)$ a quella del padre.
 \end{enumerate}
@@ -545,14 +545,14 @@ Un d-heap con n nodi ha \textbf{altezza} $O(log_d \hspace{0.1cm} n)$
 \newpage
 
 \section{Union find}
-L'\textbf{union find} √® una struttura dati basata sugli insiemi.\\
-Essa pu√≤ creare un insieme a partire da un singolo elemento, unire due insiemi, identificare l'insieme a cui appartiene un elemento. Gli insiemi contengono complessivamente $n \leq k$ elementi. Ogni insieme √® identificato da un rappresentante univoco.\\
+L'\textbf{union find} è una struttura dati basata sugli insiemi.\\
+Essa può creare un insieme a partire da un singolo elemento, unire due insiemi, identificare l'insieme a cui appartiene un elemento. Gli insiemi contengono complessivamente $n \leq k$ elementi. Ogni insieme è identificato da un rappresentante univoco.\\
 \textbf{Operazioni Union find:}
 
 \begin{itemize}
-    \item $makeSet(elem \hspace{0.1cm} x)$:  Crea un insieme il cui unico elemento (e rappresentante) √® $x$. Esso non deve appartenere ad un altro insieme esistente.
-    \item $find(elem \hspace{0.1cm} x) \xrightarrow{} name$: Restituisce il rappresentante dell‚Äôunico insieme contenente $x$.
-    \item $union(name \hspace{0.1cm} x, name \hspace{0.1cm} y)$: Unisce i due insiemi rappresentati da $x$ e da $y$. Assumiamo che il nome del nuovo insieme sia $x$. I vecchi insiemi devono essere distrutti. 
+    \item $makeSet(elem \hspace{0.1cm} x)$:  Crea un insieme il cui unico elemento (e rappresentante) è $x$. Esso non deve appartenere ad un altro insieme esistente.
+    \item $find(elem \hspace{0.1cm} x) \xrightarrow{} name$: Restituisce il rappresentante dell’unico insieme contenente $x$.
+    \item $union(name \hspace{0.1cm} x, name \hspace{0.1cm} y)$: Unisce i due insiemi rappresentati da $x$ e da $y$. Assumiamo che il nome del nuovo insieme sia $x$. I vecchi insiemi devono essere distrutti.
 \end{itemize}
 \textbf{Esempio:}
 \begin{center}
@@ -565,7 +565,7 @@ Essa pu√≤ creare un insieme a partire da un singolo elemento, unire due insiemi,
 Ogni insieme viene rappresentato con un \textbf{albero} di altezza uno.
 \begin{itemize}
     \item Le foglie dell'albero contengono gli elementi dell'insieme.
-    \item Il rappresentante √® la radice.
+    \item Il rappresentante è la radice.
 \end{itemize}
 \begin{center}
 \includegraphics[width=12cm]{images/operazioniUnionFind.png}
@@ -578,7 +578,7 @@ Implementazione basata su foresta.
 \begin{itemize}
     \item Si rappresenta ogni insieme tramite un albero radicato generico.
     \item Ogni nodo dell'albero contiene l'oggetto e il puntatore al padre.
-    \item Il rappresentante √® la radice.
+    \item Il rappresentante è la radice.
 \end{itemize}
 
 \begin{center}
@@ -617,15 +617,15 @@ Tecnica divisa in \textbf{3 fasi} fondamentali:
 \subsection{Algoritmi greedy}
 Quando applicare la tecnica greedy?
 \begin{itemize}
-    \item Quando √® possibile dimostrare che esiste una \textbf{scelta ingorda}.
+    \item Quando è possibile dimostrare che esiste una \textbf{scelta ingorda}.
     \begin{itemize}
-        \item Fra le molte scelte possibili, se ne pu√≤ facilmente individuare una che porta sicuramente alla soluzione ottima.
+        \item Fra le molte scelte possibili, se ne può facilmente individuare una che porta sicuramente alla soluzione ottima.
     \end{itemize}
     \item Quando il problema ha \textbf{sottostruttura ottima}.
     \begin{itemize}
-        \item ‚ÄúFatta tale scelta, resta un sottoproblema con la stessa
-        struttura del problema principale‚Äù.
-    \end{itemize}   
+        \item “Fatta tale scelta, resta un sottoproblema con la stessa
+        struttura del problema principale”.
+    \end{itemize}
 \end{itemize}
 
 \subsection{Algoritmo di scheduling}
@@ -647,9 +647,9 @@ Questa codifica viene utilizzata per risolvere il problema di compressione, (com
 \begin{itemize}
     \item Si usa una \textbf{funzione di codifica f: $f(c) = x$}
     \begin{enumerate}
-        \item $c$ √® un carattere preso da un alfabeto $\sum$
-        \item $x$ √® una rappresentazione binaria del carattere $c$
-        \item $c$ √® rappresenrtato da $x$ in modo efficiente
+        \item $c$ è un carattere preso da un alfabeto $\sum$
+        \item $x$ è una rappresentazione binaria del carattere $c$
+        \item $c$ è rappresenrtato da $x$ in modo efficiente
     \end{enumerate}
     \item Una sequenza di caratteri $c_1 c_2 c_n$ viene codificato con la sequenza di bit $f(c_1)f(c_2)f(c_n)$
     \item data una qualsiasi codifica, deve essere sempre possibile decodificarla durante la lettura seuqenziale bit-dopo-bit.
@@ -674,7 +674,7 @@ Dobbiamo utilizzare una codifica che minimizza la dimensione del nostro file.
     \item Codifica a lunghezza variabile
     \item \textbf{codice a prefisso} (senza prefissi):
     \begin{itemize}
-        \item \textbf{nessun codice √® un prefisso di un altro codice}.
+        \item \textbf{nessun codice è un prefisso di un altro codice}.
         \item Condizione richiesta per permettere sempre la decodifica durante la lettura bit-dopo-bit.
     \end{itemize}
 \end{itemize}
@@ -692,14 +692,14 @@ Rappresentazione del codice come un albero binario
 \begin{center}
 \includegraphics[width=13cm]{images/codificaAlbero.png}
 \end{center}
-Questo esempio per essere ottimizzato deve avere anche un figlio destro al primo livello di profondit√†.
+Questo esempio per essere ottimizzato deve avere anche un figlio destro al primo livello di profondità.
 \begin{center}
 \includegraphics[width=10cm]{images/codificaAlbero2.png}
 \end{center}
-Il \textbf{principio del codice di Huffman} √®:
+Il \textbf{principio del codice di Huffman} è:
 \begin{itemize}
-    \item \textbf{Minimizzare la lunghezza dei caratteri} che compaiono pi√π frequentemente.
-    \item Assegnare ai caratteri con la frequenza i codici corrispondenti ai percorsi pi√π lunghi all'interno dell'albero.
+    \item \textbf{Minimizzare la lunghezza dei caratteri} che compaiono più frequentemente.
+    \item Assegnare ai caratteri con la frequenza i codici corrispondenti ai percorsi più lunghi all'interno dell'albero.
 \end{itemize}
 \begin{enumerate}
     \item Inizialmente costruiamo una lista ordinata di nodi, in cui ogni nodo continee un carattere e il numero di volte in cui quel carattere compare nel file.
@@ -716,16 +716,16 @@ Il \textbf{principio del codice di Huffman} √®:
 \begin{itemize}
     \item Semplici da programmare
     \item Solitamente efficienti
-    \item Quando √® possibile dimostrare la propriet√† di scelta greedy
+    \item Quando è possibile dimostrare la proprietà di scelta greedy
         danno la soluzione ottima
-    \item  La soluzione sub-ottima pu√≤ essere accettabile
+    \item  La soluzione sub-ottima può essere accettabile
 \end{itemize}
 
 \textbf{Svantaggi:}
 \begin{itemize}
     \item Non tutti i problemi ammettono una soluzione greedy
     \item Quindi, in certi casi gli algoritmi greedy non possono essere
-          usati se si vuole la soluzione ottima 
+          usati se si vuole la soluzione ottima
 \end{itemize}
 
 \section{Programmazione dinamica}
@@ -733,7 +733,7 @@ Il \textbf{principio del codice di Huffman} √®:
 \includegraphics[width=12cm]{images/DivideDinamica.png}
 \end{center}
 \begin{enumerate}
-    \item \textbf{Sottostruttura ottimale}, deve essere possibile combinare le soluzioni dei sottoproblemi. 
+    \item \textbf{Sottostruttura ottimale}, deve essere possibile combinare le soluzioni dei sottoproblemi.
     \item \textbf{Sottoproblemi ripetuti}, che ricompaiono constantemente.
 \end{enumerate}
 
@@ -744,7 +744,7 @@ Tecnica utilizzata dai correttori ortografici. Basata su:
 \begin{itemize}
     \item Concetto di edit distance:
     \begin{itemize}
-        \item Numero di operazioni di ‚Äúediting‚Äù che sono necessarie per
+        \item Numero di operazioni di “editing” che sono necessarie per
         trasformare una stringa S in una nuova stringa T.
     \end{itemize}
     \item Transformazioni ammesse:
@@ -761,19 +761,19 @@ Tecnica utilizzata dai correttori ortografici. Basata su:
     \end{itemize}
 \end{itemize}
 
-La \textbf{distanza di levenshtein} tra $S[1..n]$ e $T[1..m]$ √® il \textbf{costo minimo} tra tutte le sequenze di operazioni di editing che trasformano $S$ in $T$.\\\\
+La \textbf{distanza di levenshtein} tra $S[1..n]$ e $T[1..m]$ è il \textbf{costo minimo} tra tutte le sequenze di operazioni di editing che trasformano $S$ in $T$.\\\\
 \textbf{Esempio:}\\
 - Determinare il numero minimo di operazioni di editing necessarie per trasformare il prefisso $S[1..i]$ di $S$ nel prefisso $T[1..j$ di $T$.\\
-- La definizione della soluzione √® data da $L[1..j]$.
-- La distanza di Levenshtein tra $S[1..n]$ e$T[1..m]$ √® il valore $L[n,m]$.
-  
+- La definizione della soluzione è data da $L[1..j]$.
+- La distanza di Levenshtein tra $S[1..n]$ e$T[1..m]$ è il valore $L[n,m]$.
+
 \newpage
-  
+
 \section{Grafi}
 
 \subsection{Grafici orientati e non orientati}
 \begin{itemize}
-    \item Un \textbf{Grafico orientato G} √® una coppia $(V,E)$ dove:
+    \item Un \textbf{Grafico orientato G} è una coppia $(V,E)$ dove:
     \begin{itemize}
         \item Insieme finito dei \textbf{vertici V}
         \item Insieme degli \textbf{archi E}: relazione binaria tra vertici
@@ -784,7 +784,7 @@ La \textbf{distanza di levenshtein} tra $S[1..n]$ e $T[1..m]$ √® il \textbf{cost
 \end{center}
 
 \begin{itemize}
-    \item Un \textbf{grafo non orientato G} √® una coppia $(V,E)$ dove:
+    \item Un \textbf{grafo non orientato G} è una coppia $(V,E)$ dove:
     \begin{itemize}
         \item Insieme finito dei \textbf{vertici V}
         \item Insieme degli \textbf{archi E}: coppie non ordinate
@@ -800,22 +800,22 @@ La \textbf{distanza di levenshtein} tra $S[1..n]$ e $T[1..m]$ √® il \textbf{cost
     \item Visite
     \begin{itemize}
         \item Visite in ampiezza
-        \item Visite in profondit√†
+        \item Visite in profondità
     \end{itemize}
     \item Alberi di copertura minimi
     \item Cammini minimi
     \begin{itemize}
         \item Da singola sorgente
-        \item Fra tutte le coppie dei vertici 
+        \item Fra tutte le coppie dei vertici
     \end{itemize}
 \end{itemize}
 
 \subsubsection{Incidenza e adiacenza}
 \begin{itemize}
-    \item In un grafo orientato l'arco \textbf{(v,w)} √® \textbf{incidente} da $v$ a $w$
-    \item Un vertice $w$ √® adiacente a $v$ se e solo se $(v, w) \in E$
+    \item In un grafo orientato l'arco \textbf{(v,w)} è \textbf{incidente} da $v$ a $w$
+    \item Un vertice $w$ è adiacente a $v$ se e solo se $(v, w) \in E$
     \item In un grafo non orientato la relazione di adiacenza tra
-     vertici √® simmetrica
+     vertici è simmetrica
 \end{itemize}
 \begin{center}
 \includegraphics[width=10cm]{images/grafoincidente.png}
@@ -903,10 +903,10 @@ $\delta$ = grado
 \end{center}
 
 \subsection{Grafi pesati}
-In alcuni casi ogni arco ha un \textbf{peso} (o \textbf{costo}) associato.Il costo pu√≤ essere determinato tramite una funzione di costo c: $E \in R$, dove $R$ √® l‚Äôinsieme dei numeri reali. Quando tra due vertici non esiste un arco, si dice che il costo √® \textbf{infinito}.
+In alcuni casi ogni arco ha un \textbf{peso} (o \textbf{costo}) associato.Il costo può essere determinato tramite una funzione di costo c: $E \in R$, dove $R$ è l’insieme dei numeri reali. Quando tra due vertici non esiste un arco, si dice che il costo è \textbf{infinito}.
 
 \subsection{Grado}
-In un \textbf{grafo non orientato}, il \textbf{grado} di un vertice √® il \textbf{numero di archi} che partono da esso.
+In un \textbf{grafo non orientato}, il \textbf{grado} di un vertice è il \textbf{numero di archi} che partono da esso.
 
 \begin{center}
 \includegraphics[width=10cm]{images/gradoGrafi.png}
@@ -914,12 +914,12 @@ In un \textbf{grafo non orientato}, il \textbf{grado} di un vertice √® il \textb
 
 \begin{itemize}
     \item In un \textbf{grafo orientato}, il grado entrante (uscente) di un
-vertice √® il \textbf{numero di archi incidenti} in (da) esso
-\item In un \textbf{grafo orientato} il grado di un vertice √® la \textbf{somma} del suo grado entrante e del suo grado uscente
+vertice è il \textbf{numero di archi incidenti} in (da) esso
+\item In un \textbf{grafo orientato} il grado di un vertice è la \textbf{somma} del suo grado entrante e del suo grado uscente
 \end{itemize}
 
 \subsection{Cammini}
-La lunghezza del cammino √® il numero di archi attraversati.
+La lunghezza del cammino è il numero di archi attraversati.
 
 \begin{center}
 \includegraphics[width=10cm]{images/cammini.png}
@@ -929,15 +929,15 @@ Un cammino si dice \textbf{semplice} se tutti i suoi vertici sono
 \textbf{distinti} (compaiono una sola volta nella sequenza).
 
 \subsection{Grafi connessi}
-Se G √® un grafo \textbf{non orientato}  , diciamo che $G$ √®
+Se G è un grafo \textbf{non orientato}  , diciamo che $G$ è
 \textbf{connesso} se esiste un cammino da ogni vertice ad
-ogni altro vertice. 
+ogni altro vertice.
 
 \begin{center}
 \includegraphics[width=10cm]{images/grafoConnesso.png}
 \end{center}
 \subsubsection{Grafo fortemente connesso}
-Se G √® un grafo \textbf{orientato}, diciamo che $G$ √® \textbf{fortemente
+Se G è un grafo \textbf{orientato}, diciamo che $G$ è \textbf{fortemente
 connesso} se esiste un cammino da ogni vertice ad
 ogni altro vertice.
 
@@ -947,23 +947,23 @@ ogni altro vertice.
 
 \subsubsection{Grafo debolmente connesso}
 
-Se G √® un grafo \textbf{orientato} che non √® fortemente
-connesso, ma la sua versione non orientata √®
-connessa, diciamo che G √® \textbf{debolmente connesso}.
+Se G è un grafo \textbf{orientato} che non è fortemente
+connesso, ma la sua versione non orientata è
+connessa, diciamo che G è \textbf{debolmente connesso}.
 
 \begin{center}
 \includegraphics[width=10cm]{images/grafoDebolmenteConnesso.png}
 \end{center}
 
 \subsection{Grafi aciclici}
-Un grafo senza cicli semplici √® detto \textbf{aciclico}.
-Un grafo orientato aciclico √® chiamato \textbf{DAG} (Directed Acyclic Graph).
+Un grafo senza cicli semplici è detto \textbf{aciclico}.
+Un grafo orientato aciclico è chiamato \textbf{DAG} (Directed Acyclic Graph).
 \begin{center}
 \includegraphics[width=7cm]{images/grafoAciclico.png}
 \end{center}
 
 \subsection{Grafo completo}
-Un \textbf{grafo non orientato completo} √® un grafo non
+Un \textbf{grafo non orientato completo} è un grafo non
 orientato che ha un arco tra ogni coppia di vertici.
 
 \begin{center}
@@ -972,8 +972,8 @@ orientato che ha un arco tra ogni coppia di vertici.
 
 \subsection{Alberi}
 
- Un \textbf{albero libero} √® un grafo non orientato connesso,
-aciclico. Se un vertice √® detto radice, otteniamo un \textbf{albero
+ Un \textbf{albero libero} è un grafo non orientato connesso,
+aciclico. Se un vertice è detto radice, otteniamo un \textbf{albero
 radicato}
 
 \begin{center}
@@ -984,30 +984,30 @@ radicato}
 \begin{itemize}
     \item \textbf{Visita in ampiezza} (breadth-first search)
     \begin{itemize}
-        \item Visita i nodi ‚Äúespandendo‚Äù la frontiera fra nodi scoperti / da
+        \item Visita i nodi “espandendo” la frontiera fra nodi scoperti / da
 scoprire
 \item Es: Cammini di lunghezza minima da singola sorgente
     \end{itemize}
-    \item \textbf{Visita in profondit√†} (depth-first search)
+    \item \textbf{Visita in profondità} (depth-first search)
     \begin{itemize}
-        \item Visita i nodi andando il ‚Äúpi√π lontano possibile‚Äù nel grafo
+        \item Visita i nodi andando il “più lontano possibile” nel grafo
         \item Es: Componenti fortemente connesse, ordinamento
 topologico
     \end{itemize}
 \end{itemize}
 
 \subsubsection{Vertici del grafo}
-Ogni vertice del grafo pu√≤ essere:
+Ogni vertice del grafo può essere:
 \begin{itemize}
-    \item \textbf{inesplorato:} Il vertice non √® ancora stato incontrato.
+    \item \textbf{inesplorato:} Il vertice non è ancora stato incontrato.
     \item \textbf{aperto:} l'algoritmo ha incontrato il vertice la prima volta.
-    \item \textbf{chiuso:} il vertice √® stato visitato completamente (tutti gli archi incidenti sono stati esplorati).
+    \item \textbf{chiuso:} il vertice è stato visitato completamente (tutti gli archi incidenti sono stati esplorati).
 \end{itemize}
 \subsection{Algoritmo di visita generico}
 \begin{center}
     \includegraphics[width=10cm]{images/visitaGrafi.png}
 \end{center}
-\subsubsection{Complessit√†}
+\subsubsection{Complessità}
 \begin{itemize}
     \item $O(n+m)$ liste di adiacenza
     \item $O(n^2)$ matrice di adiacenza
@@ -1016,7 +1016,7 @@ Ogni vertice del grafo pu√≤ essere:
 \subsection{Algoritmo di visita in ampiezza}
 \begin{itemize}
     \item Visitare i nodi a distanze crescenti dalla sorgente
-    \item Generare un albero BF (breadth-first), cio√® un albero contentente tutti i vertici
+    \item Generare un albero BF (breadth-first), cioè un albero contentente tutti i vertici
     \item Calcolare la distanza minima da s a tutti i vertici raggiungibili
 \end{itemize}
 
@@ -1024,7 +1024,7 @@ Ogni vertice del grafo pu√≤ essere:
     \includegraphics[width=8cm]{images/visitaAmpiezza.png}
 \end{center}
 
-\subsection{Algoritmo di visita in profondit√†}
+\subsection{Algoritmo di visita in profondità}
 \begin{itemize}
     \item Utilizzata per coprire l'intero grafo, non solo i nodi
 raggiungibili da una singola sorgente (diversamente da BFS)
@@ -1035,24 +1035,24 @@ raggiungibili da una singola sorgente (diversamente da BFS)
     \includegraphics[width=8cm]{images/visitaProfondita.png}
 \end{center}
 
-\subsubsection{Propriet√† della visita DFS}
+\subsubsection{Proprietà della visita DFS}
 
-In una qualsiasi visita in profondit√† per ogni coppia di vertici $u,v$ \textbf{una sola} delle seguenti condizioni √® vera:
+In una qualsiasi visita in profondità per ogni coppia di vertici $u,v$ \textbf{una sola} delle seguenti condizioni è vera:
 \begin{enumerate}
     \item Gli intervalli $[u.dt, u.ft]$ e $[v.dt, v.ft]$ sono disgiunti (non sono discendenti)
-    \item L'intervallo $[u.dt, u.ft]$ √® interamente contenuto in $[v.dt, v.ft]$ ($u$ √® discendente di $f$
-    \item L'intervallo $[v.dt, v.ft]$ √® interamente contenuto in $[u.dt, u.ft]$ ($v$ √® discendente di $u$
+    \item L'intervallo $[u.dt, u.ft]$ è interamente contenuto in $[v.dt, v.ft]$ ($u$ è discendente di $f$
+    \item L'intervallo $[v.dt, v.ft]$ è interamente contenuto in $[u.dt, u.ft]$ ($v$ è discendente di $u$
 \end{enumerate}
 
 
 \subsection{Ordinamento topologico}
 Dato un DAG G (direct acyclic graph), un ordinamento
-topologico su G √® un ordinamento lineare dei suoi
+topologico su G è un ordinamento lineare dei suoi
 vertici tale per cui:
 \begin{itemize}
-    \item Se G contiene l‚Äôarco (u,v), allora u compare prima di v
-nell‚Äôordinamento
-\item Per transitivit√†, ne consegue che se v √® raggiungibile da u,
+    \item Se G contiene l’arco (u,v), allora u compare prima di v
+nell’ordinamento
+\item Per transitività, ne consegue che se v è raggiungibile da u,
 allora u compare prima di v nell'ordinamento
 \end{itemize}
 
@@ -1067,7 +1067,7 @@ allora u compare prima di v nell'ordinamento
 Algoritmo:
 \begin{enumerate}
     \item Si effettua una DFS
-    \item L‚Äôoperazione di visita aggiunge il nodo alla testa di una lista ‚Äúat finish time‚Äù
+    \item L’operazione di visita aggiunge il nodo alla testa di una lista “at finish time”
     \item Restituire la lista di vertici
 \end{enumerate}
 
@@ -1076,7 +1076,7 @@ Algoritmo:
 \end{center}
 
 \subsection{Collegare elementi minimizzando vincoli}
-Minimizzare la quantit√† di filo elettrico per collegare fra loro i
+Minimizzare la quantità di filo elettrico per collegare fra loro i
 diversi componenti.
 \begin{itemize}
     \item albero di copertura (di peso) minimo.
@@ -1086,10 +1086,10 @@ diversi componenti.
 
 \subsubsection{Albero di copertura (spanning tree)}
 Dato un grafo $G = (V, E)$ non orientato e connesso, un
-albero di copertura di $G$ √® un sottografo $T = (V, E_T
+albero di copertura di $G$ è un sottografo $T = (V, E_T
 )$ tale che:
 \begin{itemize}
-    \item  T √® un albero
+    \item  T è un albero
     \item $E_T \subseteq E$
     \item $T$ contiene tutti i nodi di $G$
 \end{itemize}
@@ -1097,7 +1097,7 @@ albero di copertura di $G$ √® un sottografo $T = (V, E_T
 \begin{center}
     \includegraphics[width=5cm]{images/alberoCopertura.png}
 \end{center}
-Il \textbf{Minimum Spanning Tree} non √® necessariamente unico.
+Il \textbf{Minimum Spanning Tree} non è necessariamente unico.
 
 \subsection{Algoritmo generico}
  \begin{itemize}
@@ -1106,12 +1106,12 @@ Il \textbf{Minimum Spanning Tree} non √® necessariamente unico.
          \item  Un algoritmo \textbf{greedy} generico.
          \item Due istanze di questo algoritmo: \textbf{Kruskal} e \textbf{Prim}
      \end{itemize}
-     \item L'idea √® di \textbf{accrescere} un sottoinsieme T di archi in
+     \item L'idea è di \textbf{accrescere} un sottoinsieme T di archi in
         modo tale che venga rispettata la seguente condizione:
         \begin{itemize}
-            \item T √® un sottoinsieme di qualche albero di copertura minimo
+            \item T è un sottoinsieme di qualche albero di copertura minimo
         \end{itemize}
-        \item  Un arco ${u, v}$ √® detto \textbf{sicuro} per T se $T \cup \{u, v\}$ √® ancora un sottoinsieme di qualche MST
+        \item  Un arco ${u, v}$ è detto \textbf{sicuro} per T se $T \cup \{u, v\}$ è ancora un sottoinsieme di qualche MST
   \end{itemize}
 
 \begin{center}
@@ -1131,11 +1131,11 @@ Il \textbf{Minimum Spanning Tree} non √® necessariamente unico.
 Per caratterizzare gli archi sicuri dobbiamo introdurre
 alcune definizioni:
 \begin{itemize}
-    \item Un \textbf{taglio} $(S, V - S)$ di un grafo non orientato $G = (V, E)$ √® una partizione di $V$ in due sottoinsiemi disgiunti
+    \item Un \textbf{taglio} $(S, V - S)$ di un grafo non orientato $G = (V, E)$ è una partizione di $V$ in due sottoinsiemi disgiunti
     \item Un arco ${u, v}$ \textbf{attraversa il taglio} se $u \in S e v \in V - S$
     \item Un taglio \textbf{rispetta} un insieme di archi T se nessun arco di T
     attraversa il taglio.
-    \item Un arco che attraversa un taglio √® \textbf{leggero} se il suo peso √® minimo fra i pesi degli archi che attraversano un taglio.
+    \item Un arco che attraversa un taglio è \textbf{leggero} se il suo peso è minimo fra i pesi degli archi che attraversano un taglio.
 \end{itemize}
 
 \begin{enumerate}
@@ -1150,7 +1150,7 @@ alcune definizioni:
     \item \textbf{Metodo greedy}
     \begin{itemize}
         \item Costruisce un MST applicando, ad ogni passo, una delle
-        due regole precedenti (una qualunque, purch√© si possa usare)
+        due regole precedenti (una qualunque, purché si possa usare)
     \end{itemize}
 \end{enumerate}
 
@@ -1162,12 +1162,12 @@ alcune definizioni:
 \subsubsection{Algoritmo di Kruskal}
 \begin{itemize}
     \item Ingrandire sottoinsiemi disgiunti di un albero di copertura
-    minimo connettendoli fra di loro fino ad avere l‚Äôalbero finale
+    minimo connettendoli fra di loro fino ad avere l’albero finale
     \begin{itemize}
-        \item Inizialmente la \textbf{foresta di copertura} √® composta da n alberi, uno per ciascun nodo, e nessun arco.
+        \item Inizialmente la \textbf{foresta di copertura} è composta da n alberi, uno per ciascun nodo, e nessun arco.
     \end{itemize}
     \item Si considerano gli archi in ordine non decrescente di peso
-    \item L‚Äôalgoritmo √® greedy perch√© ad ogni passo si aggiunge alla
+    \item L’algoritmo è greedy perché ad ogni passo si aggiunge alla
     foresta un arco con il peso minimo
 \end{itemize}
 
@@ -1180,11 +1180,11 @@ $m$ = \textbf{numero archi}
 $$O(m \hspace{0.1cm}log\hspace{0.1cm} n)$$
 
 \subsection{Algoritmo di Prim}
-L‚Äôalgoritmo di \textbf{Prim} procede mantenendo in un singolo albero $T$ che viene fatto via via ‚Äúcrescere‚Äù.
+L’algoritmo di \textbf{Prim} procede mantenendo in un singolo albero $T$ che viene fatto via via “crescere”.
 \begin{itemize}
-    \item L‚Äôalbero parte da un nodo arbitrario \textbf{r} (la \textbf{radice}) e cresce fino a quando ricopre tutti i vertici.
+    \item L’albero parte da un nodo arbitrario \textbf{r} (la \textbf{radice}) e cresce fino a quando ricopre tutti i vertici.
     \item Ad ogni passo viene aggiunto l'arco di peso minimo che
-    collega un nodo gi√† raggiunto dell'albero con uno non ancora raggiunto
+    collega un nodo già raggiunto dell'albero con uno non ancora raggiunto
 \end{itemize}
 
 \begin{center}
@@ -1215,20 +1215,20 @@ Data una coppia di nodi $v_0$ e $v_k$ , vogliamo trovare (se esiste) un cammino 
     \end{itemize}
 \end{enumerate}
 
-\subsubsection{Propriet√† (sottostruttura ottima)}
-Sia $G = (V, E)$ un grafo orientato con funzione costo $w$; allora ogni sotto-cammino di un cammino di costo minimo in $G$ √® a sua volta un cammino di costo minimo.
+\subsubsection{Proprietà (sottostruttura ottima)}
+Sia $G = (V, E)$ un grafo orientato con funzione costo $w$; allora ogni sotto-cammino di un cammino di costo minimo in $G$ è a sua volta un cammino di costo minimo.
 
 \subsection{Condizioni di Bellman Ford}
 \begin{itemize}
     \item Per ogni arco $(u, v)$ e per ogni vertice $s$, vale la seguente disuguaglianza
     $$d_s_v \leq d_s_u+w(u,v) $$
 \end{itemize}
-Dalla condizione di \textbf{Bellman} si pu√≤ dedurre che l'arco $(u, v)$ fa parte di un cammino di \textbf{costo minimo} $\pi_s_v*$ se e solo se:
+Dalla condizione di \textbf{Bellman} si può dedurre che l'arco $(u, v)$ fa parte di un cammino di \textbf{costo minimo} $\pi_s_v*$ se e solo se:
     $$d_s_v = d_s_u+w(u,v) $$
 
 \begin{itemize}
     \item Supponiamo di mantenere una stima $D_s_v \leq d_s_v$ della lunghezza del cammino di costo minimo tra $s$ e $v$.
-    \item Effettuiamo dei passi di ‚Äúrilassamento‚Äù, riducendo progressivamente la stima finch√© si ha  $D_ s_v = d_s_v$.
+    \item Effettuiamo dei passi di “rilassamento”, riducendo progressivamente la stima finché si ha  $D_ s_v = d_s_v$.
 \end{itemize}
 $$\texttt{if($D_s_u+w(u,v)< D_s_v)$} \textbf{then} D_s_v \xleftarrow{}D_s_u+w(u,v) $$
 
@@ -1247,14 +1247,14 @@ Determina i cammini di \textbf{costo minimo} da singola sorgente nel caso in cui
 \begin{itemize}
     \item Sia $G = (V, E)$ un grafo orientato con funzione costo $w$.
     \begin{itemize}
-        \item I costi degli archi devono essere $\geq 0$. 
+        \item I costi degli archi devono essere $\geq 0$.
     \end{itemize}
     \item Sia $T$ una parte dell'albero dei cammini di costo minimo radicato in $s$
     \begin{itemize}
         \item $T$ rappresenta porzioni di cammini di costo minimo che partono da $s$.
     \end{itemize}
     \item Allora l'arco $(u, v)$ con $u \in V(T)$ e $v \not\in V(T)$ che
-    minimizza la quantit√† $d_s_u + w(u, v)$ appartiene ad un cammino minimo da $s$ a $v$.
+    minimizza la quantità $d_s_u + w(u, v)$ appartiene ad un cammino minimo da $s$ a $v$.
 \end{itemize}
 
 \begin{center}
@@ -1268,13 +1268,13 @@ Determina i cammini di \textbf{costo minimo} da singola sorgente nel caso in cui
  \subsubsection{Costo computazionale:}
  \begin{itemize}
      \item L'inizializzazione ha costo $O(n)$.
-     \item Le operazioni $find()$ e $deleteMin()$ hanno costo $O(log n)$ e sono eseguite al pi√π $n$ volte.
+     \item Le operazioni $find()$ e $deleteMin()$ hanno costo $O(log n)$ e sono eseguite al più $n$ volte.
         \begin{itemize}
-         \item Una volta che un nodo √® stato estratto dalla coda di priorit√†
-        non verr√† pi√π reinserito.
+         \item Una volta che un nodo è stato estratto dalla coda di priorità
+        non verrà più reinserito.
      \end{itemize}
      \item Le operazioni $insert()$ e $decreaseKey()$ hanno costo
-     $O(log n)$ e sono eseguite al pi√π $m $volte.
+     $O(log n)$ e sono eseguite al più $m $volte.
      \begin{itemize}
          \item Una volta per ogni arco.
      \end{itemize}
@@ -1289,12 +1289,12 @@ $$O(m \hspace{0.1cm} log \hspace{0.1cm}n)$$
 \subsection{Algoritmo di Floyd e Warshall}
 
 \begin{itemize}
-    \item Si pu√≤ applicare a grafi orientati con costi arbitrari (anche negativi), purch√© non ci siano cicli negativi
-    \item Sia $V = \{1, 2, ‚Ä¶ n\}$
-    \item Sia $D_x_y^k$ la distanza minima dal nodo $x$ al nodo $y$, nell'ipotesi in cui gli eventuali nodi intermedi possano appartenere esclusivamente all'insieme $\{1, ‚Ä¶ k\}$
-    \item La soluzione al nostro problema √® $D_x_y^n$ per ogni coppia di nodi $x$ e $y$.
+    \item Si può applicare a grafi orientati con costi arbitrari (anche negativi), purché non ci siano cicli negativi
+    \item Sia $V = \{1, 2, … n\}$
+    \item Sia $D_x_y^k$ la distanza minima dal nodo $x$ al nodo $y$, nell'ipotesi in cui gli eventuali nodi intermedi possano appartenere esclusivamente all'insieme $\{1, … k\}$
+    \item La soluzione al nostro problema è $D_x_y^n$ per ogni coppia di nodi $x$ e $y$.
 \end{itemize}
- 
+
  $$D_x_y^k=min\{ D_x_y^k^-^1 , D_x_k^k^-^1 + D_k_y^k^-^1 \}$$
 
 \newpage
@@ -1316,7 +1316,7 @@ $$O(n^3)$$
 \begin{itemize}
         \item Per ricostruire i cammini di costo minimo possiamo usare una matrice dei successori $next[x,y]$ di $n * n$ elementi.
     \begin{itemize}
-    \item next[x,y] √® l'indice del secondo nodo attraversato dal cammino di costo minimo che va da x a y (il primo nodo di tale cammino √® x, l'ultimo √® y).
+    \item next[x,y] è l'indice del secondo nodo attraversato dal cammino di costo minimo che va da x a y (il primo nodo di tale cammino è x, l'ultimo è y).
     \end{itemize}
 \end{itemize}
 
@@ -1324,20 +1324,20 @@ Se non sono presenti pesi negativi utilizzare \textbf{Dijkstra}, altrimenti util
 
 
 \subsection{Teoria della NP-completezza}
-\textbf{P} indica la complessit√† polinomiale.\\
+\textbf{P} indica la complessità polinomiale.\\
 \begin{itemize}
     \item Consideriamo un problema Q come una relazione:
     $$Q \subseteq< I x S$$
     \begin{itemize}
-        \item I √® l'insieme delle istanze di ingresso.
-        \item S √® l'insieme delle soluzioni.
+        \item I è l'insieme delle istanze di ingresso.
+        \item S è l'insieme delle soluzioni.
     \end{itemize}
     \item Possiamo immaginare $Q$ come un predicato che, dato
     in ingresso una istanza di input $x \in I$ e una soluzione
     $s \in S$, restituisce:
     \begin{itemize}
-        \item 1 se $(x,s) \in Q$ ($s$ √® soluzione del problema $Q$ sull'istanza $x$)
-        \item 0 altrimenti ($s$ non √® soluzione del problema $Q$ sull'istanza $x$)
+        \item 1 se $(x,s) \in Q$ ($s$ è soluzione del problema $Q$ sull'istanza $x$)
+        \item 0 altrimenti ($s$ non è soluzione del problema $Q$ sull'istanza $x$)
     \end{itemize}
 \end{itemize}
 
@@ -1351,14 +1351,53 @@ Se non sono presenti pesi negativi utilizzare \textbf{Dijkstra}, altrimenti util
 
 \newpage
 
-\subsubsection{Classi di complessit√†}
+\subsubsection{Classi di complessità}
 \begin{itemize}
-    \item La \textbf{classe P} √® la classe dei problemi risolvibili in tempo polinomiale nella dimensione n dell'istanza di ingresso:
+    \item La \textbf{classe P} è la classe dei problemi risolvibili in \textbf{tempo polinomiale} nella dimensione $n$ dell'istanza di ingresso:
     $$ P = \cup^\infty_c_=_0 \hspace{0.1cm} TIME(n^c)$$
-    \item La classe PSPACE √® la classe dei problemi risolvibili in spazio polinomiale nella dimensione n dell'istanza di ingresso:
+    \item La \textbf{classe PSPACE} è la classe dei problemi risolvibili in \textbf{spazio polinomiale} nella dimensione n dell'istanza di ingresso:
     $$ PSPACE = \cup^\infty_c_=_0 \hspace{0.1cm} SPACE(n^c)$$
+    \item La \textbf{classe EXPTIME} è la classe dei problemi risolvibili in \textbf{tempo esponenziale} nella dimensione $n$ dell'istanza di ingresso:
+    $$ EXPTIME = \cup^\infty_c_=_0 \hspace{0.1cm} TIME(2 \textsuperscript{n^c})$$
 \end{itemize}
 
+Se un problema è in $P$ allora esegue una quantità di operazioni polinomiali.
 
+\begin{itemize}
+    \item Un algoritmo che richiede tempo polinomiale riuscirà al più ad accedere ad un numero polinomiale di locazioni di memoria diverse, quindi:
+    $$ P \subseteq PSPACE$$
+    \item Poiché $n^c$ locazioni di memoria possono trovarsi al più in $2^{ n^c }$ stati diversi, si ha anche:
+    $$PSPACE \subseteq EXPTIME$$
+    \item Non è noto se le inclusioni di cui sopra sono strette (non si sa se $P \subset PSPACE$ o se $PSPACE \subset EXPTIME$), ma una delle due inclusioni è stretta! (in quanto si sa che $P \subset EXPTIME$)
+\end{itemize}
+\newpage
+\subsubsection{Verificare vs Certificare}
+\begin{itemize}
+    \item Come visto in precedenza, nei problemi di decisione siamo interessati a sapere se una istanza x del problema verifica una certa proprietà.
+    \item Spesso però siamo anche interessati a conoscere un qualche oggetto y, che dipende da x e dal problema da risolvere, che possa \textbf{certificare} il fatto che x gode di tale proprietà.
+\end{itemize}
 
-\end{document}
+Informalmente \textbf{NP} è la classe dei \textbf{problemi decisionali} che ammettono \textbf{certificati verificabili} in tempo polinomiale.\\
+
+Un algoritmo decisionale \textbf{non deterministico}, invece, oltre alle normali istruzioni può eseguire istruzioni del tipo "\textbf{indovina} $Z \in S$".
+
+\begin{itemize}
+    \item Usando il non determinismo si può risolvere il problema della soddisfacibilità in tempo lineare.
+    \item Nota: Un algoritmo non deterministico può essere rappresentato da un \textbf{albero di decisione}. l'algoritmo restituisce 1 se c'è almeno una foglia che restituisce 1.
+\end{itemize}
+
+\begin{center}
+    \includegraphics[width=8cm]{images/classeOP.png}
+\end{center}
+
+La \textbf{classe NP} è la classe dei problemi risolvibili in \textbf{tempo polinomiale} non deterministico nella dimensione n dell'istanza di ingresso:
+$$ NP = \cup^\infty_c_=_0 \hspace{0.1cm} NTIME(n^c)$$
+\newpage
+\subsubsection{Gerarchia della complessità}
+\begin{center}
+    \includegraphics[width=8cm]{images/gerarchia.png}
+\end{center}
+Delle inclusioni qui sotto \textbf{almeno una} è propria:
+$$P \subseteq NP \subseteq PSPACE \subseteq EXPTIME$$
+
+\end{document}end{document}

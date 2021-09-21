@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Linguaggi di programmazione}
+\author{kocierik }
+\date{September 2021}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Tipi di linguaggi }
+\subsection{Linguaggi imperativi e dichiarativi}
+I linguaggi \textbf{imperativi} basati sullo stato (variabili, assegnamento).\\
+I linguaggi \textbf{dichiarativi} sono basati sulla nozione di funzione ((fun(x).X+2)3;)\\
+I linguaggi\textbf{funzionali} (haskell) sono basati sulla nozione di stato: risultato del programma\\
+I linguaggi \textbf{logici} (prolog), sono basati sulle relazioni del risultato di un programma
+
+\subsection{Confrontare linguaggi}
+\begin{itemize}
+    \item Caratteristiche intrinsceche (sintassi)
+    \item Espressività (complessità)
+    \item Didattica (difficoltà apprendimento)
+    \item Leggibilità (lettura programma)
+    \item Robustezza (tipi, ecc)
+    \item Generalità
+    \item Efficienza (velocità)
+    \item Integrabilità
+\end{itemize}
+
+\subsection{Macchine astratte}
+Il ciclo di istruzioni di una macchina fisica è il classico \textbf{fetch-decode-execute}\\
+Una macchina astratta invece ha come componente fondamentale l'interprete
+\subsubsection{Interprete}
+\begin{itemize}
+    \item Elaborazione \textbf{tipi primitivi}
+    \item operazioni per il controllo della \textbf{sequenza di esecuzione}
+    \item Operazione per il \textbf{controllo del trasferimento}
+    \item Operazione per la \textbf{gestione della memoria}
+\end{itemize}
+
+\subsubsection{Linguaggi macchina}
+\begin{itemize}
+    \item \textbf{M} macchina astratta
+    \item $L_M$ Linguaggio macchina \textbf{M}
+    \item $L_M$ è il linguaggio compreso dall'interprete \textbf{M}
+\end{itemize}
+
+Le istruzioni implementate dall'ALU, possono essere:
+\begin{itemize}
+    \item \textbf{RISC} Complex Instruction Set Computers
+    \item \textbf{CISC} Reduced Instruction Set Computers
+\end{itemize}
+
+\subsection{Implementazione interpretativa pura}
+$P^L_r$ indica un programma scritto nel linguaggio \textbf{L}
+$M_L$ è realizzato scrivendo un \textbf{interprete} per $L$ su $Mo_L_o$ \\
+Un interprete per il linguaggio $L$ scritto nel linguaggio $L_o$ è un programma che realizza una funzione parziale.
+Ovvero l’interprete "\textbf{calcola} la corretta semantica" del programma!
+
+\subsection{Implementazione compilativa pura}
+I programmi in \textbf{L} sono tradotti in programmi equivalenti in $L_o$\\
+La traduzione è fatto dal compilatore, il quale si occuperà di "tradurre" il codice rendendolo leggibile alla macchina, preservando la semantica.
+
+$I^L^o_L_1 =$ un interprete scritto in $L0$ che esegue programmi scritti in $L1$
+$I^L^0_L_1(P^L^1,x) =$ risultato del calcolo del programma P (scritto in L1) con x come dato in input
+
+
+\end{document}
+

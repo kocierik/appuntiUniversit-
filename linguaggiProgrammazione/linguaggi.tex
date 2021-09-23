@@ -1,0 +1,200 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{eucal}
+
+\title{Linguaggi di programmazione}
+\author{kocierik }
+\date{September 2021}
+
+\begin{document}
+\tableofcontents
+
+\maketitle
+
+\section{Tipi di linguaggi }
+\subsection{Linguaggi imperativi e dichiarativi}
+I linguaggi \textbf{imperativi} basati sullo stato (variabili, assegnamento).\\
+I linguaggi \textbf{dichiarativi} sono basati sulla nozione di funzione ((fun(x).X+2)3;)\\
+I linguaggi\textbf{funzionali} (haskell) sono basati sulla nozione di stato: risultato del programma\\
+I linguaggi \textbf{logici} (prolog), sono basati sulle relazioni del risultato di un programma
+
+\subsection{Confrontare linguaggi}
+\begin{itemize}
+    \item Caratteristiche intrinsceche (sintassi)
+    \item Espressività (complessità)
+    \item Didattica (difficoltà apprendimento)
+    \item Leggibilità (lettura programma)
+    \item Robustezza (tipi, ecc)
+    \item Generalità
+    \item Efficienza (velocità)
+    \item Integrabilità
+\end{itemize}
+
+\subsection{Macchine astratte}
+Il ciclo di istruzioni di una macchina fisica è il classico \textbf{fetch-decode-execute}\\
+Una macchina astratta invece ha come componente fondamentale l'interprete
+\subsubsection{Interprete}
+\begin{itemize}
+    \item Elaborazione \textbf{tipi primitivi}
+    \item operazioni per il controllo della \textbf{sequenza di esecuzione}
+    \item Operazione per il \textbf{controllo del trasferimento}
+    \item Operazione per la \textbf{gestione della memoria}
+\end{itemize}
+
+\subsubsection{Linguaggi macchina}
+\begin{itemize}
+    \item \textbf{M} macchina astratta
+    \item $L_M$ Linguaggio macchina \textbf{M}
+    \item $L_M$ è il linguaggio compreso dall'interprete \textbf{M}
+\end{itemize}
+
+Le istruzioni implementate dall'ALU, possono essere:
+\begin{itemize}
+    \item \textbf{RISC} Complex Instruction Set Computers
+    \item \textbf{CISC} Reduced Instruction Set Computers
+\end{itemize}
+
+\subsection{Implementazione interpretativa pura}
+$P^L_r$ indica un programma scritto nel linguaggio \textbf{L}
+$M_L$ è realizzato scrivendo un \textbf{interprete} per $L$ su $Mo_L_o$ \\
+Un interprete per il linguaggio $L$ scritto nel linguaggio $L_o$ è un programma che realizza una funzione parziale.
+Ovvero l’interprete "\textbf{calcola} la corretta semantica" del programma!\\
+Questo tipo di compilazione ha \textbf{scarsa efficienza}, ai tempi di esecuzione vanno aggiunti i tempi di alla decodifica. In questo modo \textbf{ogni volta} che eseguo una istruzione dovrà essere \textbf{tradotta}. Al contrario della \textbf{compilazione pura} dove dovrò eseguire il codice \textbf{una sola volta}.
+\\\\
+$I^L^0_L_1(P^L^1,x) =$ risultato del calcolo del programma P (scritto in L1) con x come dato in input.\\\\
+
+
+\subsection{Implementazione compilativa pura}
+I programmi in \textbf{L} sono tradotti in programmi equivalenti in $L_o$\\
+La traduzione è fatto dal compilatore, il quale si occuperà di "tradurre" il codice rendendolo leggibile alla macchina, preservando la semantica.
+\\\\
+$I^L^o_L_1 =$ un interprete \textbf{scritto} in $\textbf{L0}$ che esegue programmi \textbf{scritti} in $L1$\\\\
+
+Questo tipo di implementazione risulta difficile data la lontananza tra $L$ e $L_0$, ma ha una buona efficienza. Un esempio di linguaggio compilativo è \textbf{C}, il quale rende il codeice leggibile alla macchina.\\
+
+\subsection{Come generare un compilatore}
+\begin{itemize}
+    \item E' possibile utilizzare strumenti automatici:
+    \begin{itemize}
+        \item \textbf{Lex} generatore di analizzatori \textbf{lessicali}
+        \item \textbf{Yacc} generatore di analizzatori \textbf{sintattici}
+    \end{itemize}
+    \item Implementazione via kernel
+    \begin{itemize}
+        \item  per implementare $L$ si scrive un interprete o un compilatore in $H$ che è un sottoinsieme ristretto di $L$.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Conclusioni}
+In linea di principio:
+\begin{itemize}
+    \item Buona flessibilità
+    \item Più facile da realizzare
+    \item Occupa meno memoria
+\end{itemize}
+Soluzione di tipo compilativo
+\begin{itemize}
+    \item privilegia l’efficienza
+    \item soluzione di tipo interpretativo
+    \item privilegia flessibilità e portabilità
+\end{itemize}
+
+Per realizzare un interprete o un compilatore è necessario che siano pienamente espressivi e quindi di implementare almeno tutte le funzioni matematiche basilari.
+Ne parleremo in seguito con il concetto di \textbf{Turing-completezza}.
+
+\section{Descrivere un linguaggio}
+La descrizione di un linguaggio avviene su 3 dimensioni:
+\begin{itemize}
+    \item \textbf{Sintassi} (regole di formazione, significato)
+    \item \textbf{Semantica} (attribuzione di significato)
+    \item \textbf{Pragmatica} (in quale modo frasi corrette e sensate sono usate, quando usare determinati costrutti)
+    \item \textbf{Implementazione} (come eseguire una frase corretta rispettandone la semantica)
+\end{itemize}
+
+\subsubsection{Sintassi}
+\begin{itemize}
+    \item \textbf{Aspetto lessicale} (parole che si possono utilizzare)
+    \begin{itemize}
+        \item \textbf{Descrizione del lessico}
+        \begin{itemize}
+            \item Dizionari
+            \item strutture complesse
+        \end{itemize}
+        \item \textbf{Errore} (vocaboli inconsistente)
+    \end{itemize}
+    \item \textbf{Aspetto grammaticale} (frasi corrette che si possono costruire con il lessico)
+    \begin{itemize}
+        \item Descrizione attraverso regole grammaticali
+        \item \textbf{Errore} (frasi scorrette)
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Semantica}
+\begin{itemize}
+    \item Per il \textbf{lessico} =  dizionario
+    \item Per le frasi devo sapere:
+    \begin{itemize}
+        \item A quale \textbf{linguaggio} la frase appartiene
+        \item Su quale linguaggio basarmi per dare \textbf{significato}
+    \end{itemize}
+\end{itemize}
+\subsubsection{Pragmatica}
+\begin{itemize}
+    \item Insieme di regole che guidano l'uso
+\end{itemize}
+\subsubsection{Implementazione}
+Eseguire una frase sintatticamente corretta rispettando la semantica
+
+\subsection{Lessico e frasi un linguaggio}
+\begin{itemize}
+    \item \textbf{Alfabeto}
+    \begin{itemize}
+        \item \textbf{Lessico} ( insieme di parole di sequenze finite (parole) costruite con caratteri
+        \begin{itemize}
+            \item \textbf{Frasi} (insieme di sequenze finite costruite con parole del lessico
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\subsubsection{Linguaggio formale}
+\begin{itemize}
+    \item L'alfabeto è un insieme di simboli
+    \item Una parola è sequenza di simboli
+    \item Un linguaggio formale è un insieme di parole
+\end{itemize}
+\begin{itemize}
+    \item Per indicare una parola vuota utilizzo questa sintassi:
+$$A^0=\{\epsilon\}$$
+    \item Contiene solo parole di lunghezza 1
+$$A^1=\{\epsilon\}$$
+    \item Contiene parole di lunghezza 2
+    $$A^1=\{\epsilon\}$$
+    \item Contiene tutte le parole
+    $$A^*$$
+\end{itemize}
+$N^K$ è numerabile
+$N^*$ è numerabile
+
+\subsection{Notazioni e definizioni ausiliari}
+\begin{itemize}
+    \item \textbf{Lunghezza} di una parola
+    $$|\epsilon|=0$$
+    $$|aw|=1+|w|$$
+    \item \textbf{Concatenazione} $x$ concatenata con $y$, $xy$ è la parola ottenuta concatenando
+    \item \textbf{Leggi della concatenazione} Vale l'associatività
+    \item \textbf{Sottostringa V di una stringa w}
+    \begin{itemize}
+        \item Ogni stringa è sottostringa di se stessa
+        \item $\epsilon$ è sottostringa di ogni stringa
+    \end{itemize}
+    \item \textbf{Suffisso:} $v$ è suffisso di $w$ sse $\exists x \in A^*. w=xv$
+    \item \textbf{Prefisso:} $v$ è prefisso di  $w$ sse $\exists x \in A^*$. $w=vx$
+    \item \textbf{Potenza ennesima} valgono le sequenze ripetute $W^n^+^1 = ww^n$
+    \item \textbf{Linguaggio L su alfabeto A} dove $L$ è sottoinsieme di $A^*$
+\end{itemize}
+
+
+
+
+
+\end{document}
+

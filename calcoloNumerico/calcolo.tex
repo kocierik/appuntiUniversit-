@@ -1,8 +1,11 @@
 
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-
-\title{Reti di calcolatori}
+\usepackage{amsfonts, amssymb, amsmath}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\parindent 0px
+\title{Calcolo numerico}
 \author{kocierik }
 \date{September 2021}
 
@@ -12,18 +15,38 @@
 
 \maketitle
 
-\section{Rete di calcolatori}
-Una rete di calcolatori  un insieme di dispositivi autonomi e interconnessi
-Utilizzata per condividere risorse, accessi remoti...
+\section{Norma di un vettore}
 
-\subsection{Classificazione reti}
+Possiamo individuare 3 tipi di norme:
 \begin{itemize}
-    \item \textbf{PAN} Persona Area Network
-    \item \textbf{LAN} Local Area Network
-    \item \textbf{MAN} Metropolitana Area Network
-    \item \textbf{WAN} Wide Area Network
-    \item \textbf{Internet} rete globale
+    \item Norma infinito
+    \item Norma 1
+    \item Norma 2
 \end{itemize}
+
+Una applicazione lineare  chiamata norma quando:
+\begin{itemize}
+    \item $||x||>= 0$
+    \item $||x||=0$ se e solo se $x=0$
+    \item $||\alpha x|| = |\alpha| ||x||$ per ogni x $\in$ R
+    \item Per ogni $x$ e $y$ vale la disuguaglianza triangolare:
+$$ |x+y| <= |x|+|y|$$
+\end{itemize}
+Il numero $||x-y||$ rappresenta la distanza tra i punti $x$ e $y$
+Un esempio di norma  fornito dalla norma $p$ definita per $1<=p<+\infty$\\
+
+ Per calcolare la norma di una matrice bisogna:
+ p = raggio spettrale = calcola autovalori metto valore assoluti e prendo il massimo
+\begin{itemize}
+    \item Norma 1 = calcolare la somma dei valori assoluti degli elementi di ogni colonna. Il massimo tra questi risultati sarˆ il valore della nostra norma.
+    \item Norma infinito  = massimo dalla somma delle righe con modulo
+    \item Norma 2 = $||A||_2 = \sqrt{p(A^TA)}
+\end{itemize}
+\begin{center}
+\includegraphics[width=12cm]{img/norme.png}
+\end{center}
+
 
 
 \end{document}
+
